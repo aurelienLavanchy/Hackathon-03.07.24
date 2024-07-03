@@ -2,7 +2,7 @@
 const CategoryRepository = require("./models/CategoryRepository");
 const UserRepository = require("./models/UserRepository")
 const JobRepository = require("./models/JobRepository")
-const CampanyRepository = require("./models/CompanyRepository")
+const CompanyRepository = require("./models/CompanyRepository")
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -15,7 +15,7 @@ const tables = {};
 tables.category = new CategoryRepository();
 tables.user = new UserRepository();
 tables.job = new JobRepository();
-tables.company = new CampanyRepository();
+tables.company = new CompanyRepository();
 
 /* ************************************************************************* */
 

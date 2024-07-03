@@ -7,7 +7,7 @@ class CompanyRepository extends AbstractRepository {
 
   async readAll() {
     const [rows] = await this.database.query(
-      `SELECT id, name,  description, detail, date,  FROM ${this.table}`
+      `SELECT id, name,  description, detail, location, sector FROM ${this.table}`
     );
 
     return rows;
@@ -15,7 +15,7 @@ class CompanyRepository extends AbstractRepository {
 
   async read(id) {
     const [row] = await this.database.query(
-      `SELECT id, name, description, detail, date, FROM ${this.table} where id = ?`,
+      `SELECT id, name, description, detail, location, sector FROM ${this.table} where id = ?`,
       [id]
     );
 
@@ -24,25 +24,24 @@ class CompanyRepository extends AbstractRepository {
 
   // Edit
 
-  async edit(company) {
-    const { name, description, detail, location, sector } = company;
 
+  async update(company) {
+    const {name, description, detail, location, sector, id} = company ;
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET name=?, description=?, detail=?, location=?, sector=? WHERE id=?`,
-      [name, description, detail, location, sector]
+      `UPDATE ${this.table} SET name = ?, description = ?, detail = ?, location = ?, sector = ? WHERE id = ?`,
+      [name, description, detail, location, sector, id] 
     );
 
-    return result.affectedRows;
+    return result.affectedRows > 0;
   }
 
   // Add (create)
-
-  async add(company) {
-    const { name, description, detail, date, location, sector } = company;
-
+  async create(name, description, detail, location, sector) {
+    
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, description, detail, date, location, sector) values(?, ?, ?, ?, ?, ?)`,
-      [name, description, detail, date, location, sector]
+      `insert into ${this.table} (name, description, detail, location, sector) values (?, ?, ?, ?, ?)`,
+      [name, description, detail, location, sector]
+      
     );
 
     return result.insertId;

@@ -12,7 +12,7 @@ const {
 
 router.get("/", browse);
 router.get("/:id", read);
-router.post("/:id", edit);
+router.put("/:id", edit);
 router.post("/", add);
 router.delete("/:id", destroy);
 

@@ -24,6 +24,7 @@ class JobRepository extends AbstractRepository {
 
   async edit(job) {
     const {
+      id,
       title,
       description,
       skill,
@@ -32,12 +33,12 @@ class JobRepository extends AbstractRepository {
       rqth,
       location,
       salary,
-      status,
+      status
     } = job;
 
-    const [result] = await this.dataabase.query(
-      `UPDATE ${this.database} SET title = ?, description = ?, skill = ?, contract = ?, date = ?, rqth = ?, location =? , salary= ?, status=? WHERE id=?`,
-      [
+    const [result] = await this.database.query(
+      `UPDATE ${this.table} SET title = ?, description = ?, skill = ?, contract = ?, date = ?, rqth = ?, location = ? , salary = ?, status = ? WHERE id = ?`,
+      [ id,
         title,
         description,
         skill,
@@ -46,38 +47,26 @@ class JobRepository extends AbstractRepository {
         rqth,
         location,
         salary,
-        status,
+        status
       ]
     );
     return result.affectedRows;
   }
 
-  async add(job) {
-    const {
-      title,
-      description,
-      skill,
-      contract,
-      date,
-      rqth,
-      location,
-      salary,
-      status,
-      category_id,
-      company_id,
-    } = job;
+  async create(title,
+    description,
+    skill,
+    contract,
+    date,
+    rqth,
+    location,
+    salary,
+    status,
+    category_id,
+    company_id) {
+  
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (  title,
-            description,
-            skill,
-            contract,
-            date,
-            rqth,
-            location,
-            salary,
-            status,
-            category_id,
-            company_id,) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (title, description, skill, contract, date, rqth, location, salary, status, category_id, company_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         title,
         description,
@@ -89,7 +78,7 @@ class JobRepository extends AbstractRepository {
         salary,
         status,
         category_id,
-        company_id,
+        company_id
       ]
     );
     return result.insertId;

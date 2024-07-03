@@ -6,17 +6,15 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import entreprise-related actions
-const { browse, read, add } = require("../../../controllers/companyActions");
 
-// Route to get a list of entreprises
+const { browse, read, edit, add, destroy} = require("../../../controllers/companyActions");
+
+
 router.get("/", browse);
-
-// Route to get a specific entreprises by ID
 router.get("/:id", read);
-
-// Route to add a new entreprises
+router.put("/:id", edit);
 router.post("/", add);
+router.delete("/:id", destroy);
 
 /* ************************************************************************* */
 

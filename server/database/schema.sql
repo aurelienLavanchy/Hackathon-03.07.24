@@ -1,3 +1,4 @@
+-- SQLBook: Code
 CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(100) NOT NULL,
@@ -11,8 +12,7 @@ CREATE TABLE company (
     description TEXT NOT NULL,
     detail TEXT NOT NULL,
     location VARCHAR(100) NOT NULL,
-    sector VARCHAR(100) NOT NULL,
-    date DATE NOT NULL
+    sector VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE category (

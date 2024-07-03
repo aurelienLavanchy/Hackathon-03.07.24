@@ -3,7 +3,7 @@ const tables = require("../../database/tables");
 // read all
 const browse = async (req, res, next) => {
   try {
-    const companies = await tables.companies.readAll();
+    const companies = await tables.company.readAll();
 
     res.json(companies);
   } catch (err) {
@@ -29,32 +29,28 @@ const read = async (req, res, next) => {
 
 // edit
 const edit = async (req, res, next) => {
-  try {
-    const { id, name, description, detail, location, sector, date } = req.body;
 
-    const company = await tables.company.edit(
-      id,
-      name,
-      description,
-      detail,
-      location,
-      sector,
-      date
+  try {
+    const {id} = req.params
+    const {name, description, detail, location, sector} = req.body;
+    const company = await tables.company.update(
+      name, description, detail, location, sector,id 
     );
-    res.sendStatus(204).json({ updated: company });
-  } catch (error) {
-    next(error);
+    res.sendStatus(204).json({updatedCompanyInfo:company});
+  } catch (err) {
+    next(err);
   }
 };
 
 // Add (create)
 
 const add = async (req, res, next) => {
-  const company = req.body;
-
   try {
-    const insertId = await tables.company.create(company);
+    const {name, description, detail, location, sector} = req.body;
 
+    const insertId = await tables.company.create(
+      name, description, detail, location, sector
+    );
     res.status(201).json({ insertId });
   } catch (err) {
     next(err);
