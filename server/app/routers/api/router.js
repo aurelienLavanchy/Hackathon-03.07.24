@@ -5,10 +5,11 @@ const router = express.Router();
 /* ************************************************************************* */
 // Import And Use Routers Here
 /* ************************************************************************* */
+const userRouter = require("./user/router");
+const categoryRouter = require("./category/router");
 
-const itemsRouter = require("./items/router");
-
-router.use("/items", itemsRouter);
+router.use("/user", userRouter);
+router.use("/categories", categoryRouter);
 
 const entreprisesRouter = require("./companies/router");
 
