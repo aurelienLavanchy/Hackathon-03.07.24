@@ -1,5 +1,8 @@
 // Import the repository modules responsible for handling data operations on the tables
 const CategoryRepository = require("./models/CategoryRepository");
+const UserRepository = require("./models/UserRepository")
+const JobRepository = require("./models/JobRepository")
+const CampanyRepository = require("./models/CompanyRepository")
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -10,6 +13,9 @@ const tables = {};
 
 // Register each repository as data access point for its table
 tables.category = new CategoryRepository();
+tables.user = new UserRepository();
+tables.job = new JobRepository();
+tables.company = new CampanyRepository();
 
 /* ************************************************************************* */
 

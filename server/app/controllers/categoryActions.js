@@ -42,7 +42,7 @@ const add = async (req, res, next) => {
     const { name } = req.body;
     const insertId = await tables.category.add(name);
 
-    res.status(201).json({ insertId });
+    res.sendStatus(201).json({ insertId });
   } catch (error) {
     next(error);
   }
