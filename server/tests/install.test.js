@@ -6,14 +6,16 @@ const { database } = require("./config");
 
 // Test suite for environment installation
 describe("Installation", () => {
-  // Test: Check if the .env file exists
+  // Test: Check if the server/.env file exists
   test("You have created /server/.env", async () => {
     expect(fs.existsSync(path.join(__dirname, "..", ".env"))).toBe(true);
   });
 
-  // Test: Check if the .env.sample file exists
-  test("You have retained /server/.env.sample", async () => {
-    expect(fs.existsSync(path.join(__dirname, "..", ".env.sample"))).toBe(true);
+  // Test: Check if the client/.env file exists
+  test("You have created /client/.env", async () => {
+    expect(
+      fs.existsSync(path.join(__dirname, "..", "..", "client", ".env.sample"))
+    ).toBe(true);
   });
 
   // Test: Check if the .env file is properly filled with valid database connection information
