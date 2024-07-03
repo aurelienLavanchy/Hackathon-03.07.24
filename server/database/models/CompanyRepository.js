@@ -41,7 +41,7 @@ class CompanyRepository extends AbstractRepository {
     const { name, description, detail, date, location, sector } = company;
 
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (title, url, image, description, date, is_premium, is_free, category_id) values(?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (name, description, detail, date, location, sector) values(?, ?, ?, ?, ?, ?)`,
       [name, description, detail, date, location, sector]
     );
 
