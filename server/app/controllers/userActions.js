@@ -12,7 +12,8 @@ const browse = async (req, res, next) => {
 
 const read = async (req, res, next) => {
   try {
-    const user = await tables.user.read(req.params.id);
+    const {id} = req.params;
+    const user = await tables.user.read(id);
     if (user == null) {
       res.sendStatus(404);
     } else {
@@ -24,19 +25,31 @@ const read = async (req, res, next) => {
 };
 
 const edit = async (req, res, next) => {
-    const user= { ...req.body, id: req.params.id };
+
     try {
-      await tables.user.update(user);
-      res.sendStatus(204);
+      const {id} = req.params;
+      const {name, email, password} = req.body;
+      const user = await tables.user.update(
+        name,
+        email,
+        password,
+        id
+      );
+      res.sendStatus(204).json({updatedUserInfo:user});
     } catch (err) {
       next(err);
     }
   };
 
 const add = async (req, res, next) => {
-  const user = req.body;
   try {
-    const insertId = await tables.user.create(user);
+    const {name, email, password} = req.body;
+
+    const insertId = await tables.user.create(
+      name,
+      email,
+      password
+    );
     res.status(201).json({ insertId });
   } catch (err) {
     next(err);
@@ -44,11 +57,11 @@ const add = async (req, res, next) => {
 };
 
 const destroy = async (req, res, next) => {
-  const { id } = req.params;
-    try {
-      await tables.user.delete(id);
+  try {
+    const { id } = req.params;
+    const deleteUser = await tables.user.delete(id);
   
-      res.sendStatus(204);
+      res.sendStatus(204).json({removed : deleteUser});
     } catch (err) {
       next(err);
     }
