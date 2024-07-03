@@ -3,17 +3,20 @@ const express = require("express");
 const router = express.Router();
 
 /* ************************************************************************* */
-// Import And Use Routers Here
+// Define Your API Routes Here
 /* ************************************************************************* */
-const userRouter = require("./user/router");
-const categoryRouter = require("./category/router");
 
-router.use("/user", userRouter);
-router.use("/categories", categoryRouter);
+// Import entreprise-related actions
+const { browse, read, add } = require("../../../controllers/companyActions");
 
-const entreprisesRouter = require("./companies/router");
+// Route to get a list of entreprises
+router.get("/", browse);
 
-router.use("/entreprises", entreprisesRouter);
+// Route to get a specific entreprises by ID
+router.get("/:id", read);
+
+// Route to add a new entreprises
+router.post("/", add);
 
 /* ************************************************************************* */
 

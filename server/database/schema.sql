@@ -1,4 +1,3 @@
-
 CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(100) NOT NULL,
@@ -6,37 +5,39 @@ CREATE TABLE user (
     password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE entreprise (
+CREATE TABLE company (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     detail TEXT NOT NULL,
     location VARCHAR(100) NOT NULL,
     sector VARCHAR(100) NOT NULL,
-    creation DATE NOT NULL
+    date DATE NOT NULL
 );
+
 CREATE TABLE category (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(255) NOT NULL
 );
+
 CREATE TABLE job (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     title VARCHAR(80) NOT NULL,
     description TEXT NOT NULL,
     skill VARCHAR(60) NOT NULL,
     contract VARCHAR(60) NOT NULL,
-    date DATE NOT NULL,
+    date DATETIME DEFAULT NOW(),
     rqth BOOLEAN NOT NULL DEFAULT FALSE,
     location VARCHAR(80) NOT NULL,
     salary VARCHAR(80) NOT NULL,
     status VARCHAR(80) NOT NULL,
-    category_id  INT UNSIGNED,
-    entreprise_id INT UNSIGNED,
+    category_id INT UNSIGNED,
+    company_id INT UNSIGNED,
     FOREIGN KEY (category_id) REFERENCES category (id),
-    FOREIGN KEY (entreprise_id) REFERENCES entreprise (id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (company_id) REFERENCES company (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE role (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(60)
 );
-
