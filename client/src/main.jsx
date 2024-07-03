@@ -11,7 +11,7 @@ import DashboardEntreprise from "./pages/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
 import ConnectionPage from "./pages/ConnectionPage";
-import TipsPage from "./pages/TipsPage";
+import SafeZonePage from "./pages/SafeZonePage";
 
 const router = createBrowserRouter([
   {
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
         element: <ConnectionPage />,
       },
       {
-        path: "/tips",
-        element: <TipsPage />,
+        path: "/safezone",
+        element: <SafeZonePage />,
       },
     ],
   },
