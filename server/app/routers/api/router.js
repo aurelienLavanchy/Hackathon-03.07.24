@@ -7,12 +7,10 @@ const router = express.Router();
 /* ************************************************************************* */
 const userRouter = require("./user/router");
 const categoryRouter = require("./category/router");
+const entreprisesRouter = require("./companies/router");
 
 router.use("/user", userRouter);
 router.use("/categories", categoryRouter);
-
-const entreprisesRouter = require("./companies/router");
-
 router.use("/entreprises", entreprisesRouter);
 
 /* ************************************************************************* */
