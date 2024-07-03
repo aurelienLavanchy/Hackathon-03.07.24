@@ -20,7 +20,7 @@ class UserRepository extends AbstractRepository {
 
   async read(id) {
     const [rows] = await this.database.query(
-      `select name, email, password from ${this.table} where id = ?`,
+      `select id, name, email, password from ${this.table} where id = ?`,
       [id]
     );
 
@@ -29,18 +29,18 @@ class UserRepository extends AbstractRepository {
 
   async readAll() {
     const [rows] = await this.database.query(
-      `select name, email, password from ${this.table}`);
+      `select id, name, email, password from ${this.table}`);
 
     return rows;
   }
 
   async update(user) {
-    const {name, email, password} = user ;
+    const {name, email, password, id} = user ;
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET name = ?, password = ?, email = ?, WHERE id = ?`,
-      [name, email, password]
+      `UPDATE ${this.table} SET name = ?, password = ?, email = ? WHERE id = ?`,
+      [name, email, password, id]
     );
-
+console.info(`updated user ${user}`)
     return result.affectedRows > 0;
   }
 

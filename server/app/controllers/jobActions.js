@@ -40,11 +40,11 @@ const edit = async (req, res, next) => {
 const add = async (req, res, next) => {
   try {
     const {title, description, skill, contract, date, rqth, location, salary, status} = req.body;
-    const insertId = await tables.job.add(title, description, skill, contract, date, rqth, location, salary, status)
+    const insertId = await tables.job.create(title, description, skill, contract, date, rqth, location, salary, status)
 
     res.sendStatus(201).json({insertId})
   } catch (error) {
-    next(error)
+    next(error);
   }
 }
 
