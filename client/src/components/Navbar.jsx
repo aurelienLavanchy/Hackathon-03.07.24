@@ -1,11 +1,22 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav>
       <span>logo?</span>
       <ul>
-        <li>lien1</li>
-        <li>lien2</li>
-        <li>lien3</li>
+        <Link to="/">
+          <li>Accueil</li>
+        </Link>
+        <Link to="/offers">
+          <li>Les offres</li>
+        </Link>
+        <Link to="/entreprises">
+          <li>Les entreprises</li>
+        </Link>
+        <Link to="/tips">
+          <li>Conseils</li>
+        </Link>
       </ul>
     </nav>
   );
