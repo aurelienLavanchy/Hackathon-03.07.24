@@ -27,6 +27,7 @@
   text-decoration: underline dotted;
 }
 .company-short-description {
+  margin-top: 1rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -49,7 +50,8 @@
   right: 0;
   top: -60%;
   text-decoration: none;
-  border: 1px solid var(--accent-color);
+  color: black;
+  border: none;
   background-color: orange;
   padding: 0.25rem;
   border-radius: 4px;
