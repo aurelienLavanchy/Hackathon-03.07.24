@@ -5,9 +5,10 @@
 }
 .text-homepage {
   margin: auto;
-  max-width: 75ch;
-  margin-bottom: 10rem;
+  max-width: 60ch;
+  margin-bottom: 8rem;
   font-size: 1.2rem;
+  line-height: 1.5;
 }
 .image-size {
   width: 12rem;
@@ -15,5 +16,5 @@
 }
 
 .container-homepage {
-  margin-top: 12rem;
+  margin-top: 9rem;
 }
