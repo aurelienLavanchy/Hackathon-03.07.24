@@ -1,0 +1,32 @@
+:root {
+  --main-color: #ff9f1c;
+  --second-color: #2ec4b6;
+  --third-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "allerta";
+}
+@font-face {
+  font-family: "allerta";
+  src: url("../../assets/fonts/Allerta-Regular.ttf");
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  gap: 1rem;
+}
+
+.infos-container {
+  border: 1px solid;
+  border-color: var(--main-color);
+}
+
+.offers-container {
+  border: 1px solid;
+  border-color: var(--main-color);
+}

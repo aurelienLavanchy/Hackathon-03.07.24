@@ -1,6 +1,6 @@
 import "./ConnectionButton.css";
 import { NavLink } from "react-router-dom";
-import avatarHome from "../../assets/images/avatar.png"
+import avatarHome from "../../assets/images/avatar.png";
 
 export default function ConnectionButton() {
   return (

@@ -20,9 +20,8 @@ export default function Navbar() {
           <Link to="/safezone">
             <li>Safe zone</li>
           </Link>
-          <ConnectionButton/>
+          <ConnectionButton />
         </ul>
-        
       </div>
     </nav>
   );

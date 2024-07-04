@@ -8,7 +8,7 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import OffersPage from "./pages/OffersPage";
 import EntreprisesPage from "./pages/EntreprisesPage";
-import DashboardEntreprise from "./pages/DashboardEntreprise";
+import DashboardEntreprise from "./pages/DashboardEntreprise/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
 import ConnectionPage from "./pages/connectionPage/ConnectionPage";
