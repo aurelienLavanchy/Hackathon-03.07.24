@@ -7,10 +7,11 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "allerta";
 }
 @font-face {
-  font-family: "";
-  src: url("");
+  font-family: "allerta";
+  src: url("../../assets/fonts/Allerta-Regular.ttf");
 }
 
 .title-offer {
@@ -19,16 +20,28 @@
   font-size: 1.8rem;
   color: #0e4749;
 }
+.container-offer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.form-ingredient {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 50%;
+}
 .container-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: gray;
+  width: 50%;
 }
 
 .img-offer {
-  width: 70%;
+  width: 40%;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 25px;
@@ -38,6 +51,7 @@
 .img-offer:hover {
   border-color: var(--main-color);
   border-radius: 25px;
+  width: 41%;
 }
 
 .form-offer {
@@ -58,6 +72,7 @@
 .error-offer {
   margin-bottom: 1.2rem;
   font-size: 0.8rem;
+  font: rouge;
 }
 .input-field:hover {
   border: solid 1px;
@@ -79,30 +94,4 @@
 .button-offer:hover {
   background: var(--main-color);
   border: var(--main-color);
-}
-@media screen and (min-width: 768px) {
-  .container-offer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .container-image {
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .img-ingredient {
-    width: 81%;
-  }
-  .form-ingredient {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    width: 50%;
-  }
 }
