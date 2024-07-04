@@ -2,13 +2,10 @@ const AbstractRepository = require("./AbstractRepository");
 
 class UserRepository extends AbstractRepository {
   constructor() {
-   
     super({ table: "user" });
   }
 
-
   async create(name, email, password) {
-    
     const [result] = await this.database.query(
       `insert into ${this.table} (name, password, email) values (?, ?, ?)`,
       [name, email, password]
@@ -16,7 +13,6 @@ class UserRepository extends AbstractRepository {
 
     return result.insertId;
   }
-
 
   async read(id) {
     const [rows] = await this.database.query(
@@ -29,18 +25,19 @@ class UserRepository extends AbstractRepository {
 
   async readAll() {
     const [rows] = await this.database.query(
-      `select id, name, email, password from ${this.table}`);
+      `select id, name, email, password from ${this.table}`
+    );
 
     return rows;
   }
 
   async update(user) {
-    const {name, email, password, id} = user ;
+    const { name, email, password, id } = user;
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET name = ?, password = ?, email = ? WHERE id = ?`,
       [name, email, password, id]
     );
-console.info(`updated user ${user}`)
+    console.info(`updated user ${user}`);
     return result.affectedRows > 0;
   }
 
@@ -52,7 +49,14 @@ console.info(`updated user ${user}`)
 
     return result.affectedRows > 0;
   }
-}
 
+  async findUserByEmail(email) {
+    const [result] = await this.database.query(
+      `SELECT name, email, password, role_id FROM ${this.table} WHERE email = ?`,
+      [email]
+    );
+    return result;
+  }
+}
 
 module.exports = UserRepository;
