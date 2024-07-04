@@ -10,7 +10,7 @@ export default function IntroPage() {
       <style>{`nav {display: none!important}`}</style>
       <img className="logo-intro" src={logo} alt="logo" />
       <h1 className="text-intro">
-        Le site des offres d'emploi qui rendent la tech + inclusive
+        Le site d'offres d'emploi qui rend la tech + inclusive
       </h1>
       <Link to="/home">
         <img className="fleche-intro" src={fleche} alt="suivant" />

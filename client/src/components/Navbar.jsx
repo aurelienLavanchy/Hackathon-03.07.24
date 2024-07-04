@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import ConnectionButton from "./connectionButton/ConnectionButton";
+import avatarHome from "../assets/images/avatar.png";
+import logo from "../assets/images/logo.png";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <span>logo?</span>
+      <Link to="/home">
+        <img src={logo} alt="logo" className="logo-homepage" />
+      </Link>
       <div>
         <ul>
           <Link to="/home">
@@ -20,7 +23,9 @@ export default function Navbar() {
           <Link to="/safezone">
             <li>Safe zone</li>
           </Link>
-          <ConnectionButton />
+          <Link to="/connection" className="button-connexion">
+            <img src={avatarHome} alt="Avatar Homme" className="avatar-icon" />
+          </Link>
         </ul>
       </div>
     </nav>
