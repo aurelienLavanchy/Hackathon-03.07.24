@@ -3,7 +3,6 @@ import "./OfferDetailsPage.css";
 
 export default function OfferDetailsPage() {
   const [jobOffer] = useLoaderData();
-  /* console.info(jobOffer); */
   const postDate = new Date(jobOffer.date);
   const formattedDate = postDate.toISOString().substring(0, 10);
 
