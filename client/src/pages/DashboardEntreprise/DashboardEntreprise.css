@@ -24,9 +24,36 @@
 .infos-container {
   border: 1px solid;
   border-color: var(--main-color);
+  padding: 2rem;
+}
+
+.infos {
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.cle {
+  margin-bottom: 1rem;
+}
+
+.button-modify {
+  background-color: var(--second-color);
+  color: var(--third-color);
+  border: solid 1px var(--second-color);
+  border-radius: 25px;
+  margin-top: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-modify:hover {
+  background: var(--main-color);
+  border: var(--main-color);
 }
 
 .offers-container {
   border: 1px solid;
   border-color: var(--main-color);
+  padding: 2rem;
 }
