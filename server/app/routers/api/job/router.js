@@ -10,12 +10,12 @@ const {
   destroy,
 } = require("../../../controllers/jobActions");
 
-/* const validateJobSchema = require("../../../middlewares/validation/validateJobSchema"); */
+/* const validateJobSchema = require("../../../middlewares/validation/validateJobSchema "); */
 
 router.get("/", browse);
 router.get("/:id", read);
 router.put("/:id", edit);
-router.post("/", /* validateJobSchema, */ add);
+router.post("/"/* , validateJobSchema */, add);
 router.delete("/:id", destroy);
 
 module.exports = router;
