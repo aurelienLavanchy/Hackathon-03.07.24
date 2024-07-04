@@ -1,0 +1,19 @@
+.image-homepage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.text-homepage {
+  margin: auto;
+  max-width: 75ch;
+  margin-bottom: 10rem;
+  font-size: 1.2rem;
+}
+.image-size {
+  width: 12rem;
+  margin-left: 3rem;
+}
+
+.container-homepage {
+  margin-top: 12rem;
+}
