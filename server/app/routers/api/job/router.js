@@ -10,7 +10,7 @@ const {
   destroy,
 } = require("../../../controllers/jobActions");
 
-const validateJobSchema = require("../../../middlewares/validateJobSchema");
+const validateJobSchema = require("../../../middlewares/validation/validateJobSchema");
 
 router.get("/", browse);
 router.get("/:id", read);

@@ -1,9 +1,17 @@
 -- SQLBook: Code
+
+CREATE TABLE role (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(60) NOT NULL
+);
+
 CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    role_id INT UNSIGNED DEFAULT 1,
+    FOREIGN KEY (role_id) REFERENCES role (id)
 );
 
 CREATE TABLE company (
@@ -37,7 +45,5 @@ CREATE TABLE job (
     FOREIGN KEY (company_id) REFERENCES company (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE role (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    name VARCHAR(60)
-);
+-- Création de roles
+INSERT INTO role (name) VALUES ('user'), ('admin');

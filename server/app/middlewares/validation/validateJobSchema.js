@@ -1,4 +1,4 @@
-const { z } = require('zod');
+const { z } = require("zod");
 
 const JobSchema = z.object({
   title: z
@@ -76,7 +76,7 @@ const validateJobSchema = (req, res, next) => {
     date,
   } = req.body;
 
-  const validate = JobSchema.safeParse({
+  const validate = JobSchema.parse({
     title,
     description,
     skill,
