@@ -9,7 +9,6 @@ export default function App() {
   return (
     <main>
       <Navbar />
-      <h1>temp</h1>
       <Outlet context={{ currentFont, setCurrentFont }} />
     </main>
   );

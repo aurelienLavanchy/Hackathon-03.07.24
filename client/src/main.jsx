@@ -13,6 +13,8 @@ import OfferDetailsPage from "./pages/OfferDetailsPage";
 import ConnectionPage from "./pages/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
 
+const express = import.meta.env.VITE_API_URL;
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/offer/:id",
         element: <OfferDetailsPage />,
+        loader: ({ params }) => fetch(`${express}/api/job/${params.id}`),
       },
       {
         path: "/account",
