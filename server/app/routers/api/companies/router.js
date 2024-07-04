@@ -6,9 +6,13 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-
-const { browse, read, edit, add, destroy} = require("../../../controllers/companyActions");
-
+const {
+  browse,
+  read,
+  edit,
+  add,
+  destroy,
+} = require("../../../controllers/companyActions");
 
 router.get("/", browse);
 router.get("/:id", read);
