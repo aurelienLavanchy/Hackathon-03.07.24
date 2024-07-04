@@ -29,10 +29,12 @@
         text-decoration: underline;
         scale: 1.2;
         z-index: 2;
-        color: var(--white);
-        background-color: var(--primary-color);
-        mix-blend-mode: difference;
-        transition: all 150ms ease-in;
+        color: var(--secondary-color);
+        background-color: var(--white);
+        mix-blend-mode: darken;
+        transition: scale 150ms ease-in-out;
+        border: 0.125rem transparent;
+        border-radius: 0.25rem;
       }
     }
   }

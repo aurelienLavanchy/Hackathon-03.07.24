@@ -7,6 +7,7 @@
 }
 
 .company-content {
+  background-color: rgba(45, 45, 45, 0.15);
   margin: 4rem;
   padding: 1.5rem;
   border: 0.0625rem solid var(--accent-color);
@@ -25,4 +26,19 @@
       margin: 0.25rem 0;
     }
   }
+}
+
+.map-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#map-container {
+  height: 30rem;
+  width: 75%;
+  /* div.leaflet-bottom.leaflet-right {
+    display: none;
+  } */
 }

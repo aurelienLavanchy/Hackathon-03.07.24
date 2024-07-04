@@ -1,9 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import "./Signup.css";
-
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export default function Sign() {
+  const [resStatus, setResStatus] = useState(null);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -11,9 +15,21 @@ export default function Sign() {
     formState: { errors },
   } = useForm();
 
+  const express = import.meta.env.VITE_API_URL;
   const onSubmit = async (data) => {
-    const datasign = data;
-    delete datasign.confirmpassword;
+    try {
+      await axios
+        .post(`${express}/api/user/register`, data)
+        .then(
+          (response) => console.info(response) && setResStatus(response.status)
+        );
+
+      if (resStatus === 201) {
+        navigate(`/login`);
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -24,8 +40,26 @@ export default function Sign() {
         method="post"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <div className="name-signup">
+          <label htmlFor="nom">
+            Nom
+            <input
+              type="name"
+              name="namesign"
+              className="nom-signup"
+              {...register("name", {
+                required: "obligatoire",
+                minLength: {
+                  value: 2,
+                  message: "Il vous faut minimum 2 caractères",
+                },
+              })}
+            />
+          </label>
+          {errors.namesign && <span> {errors.namesign.message} </span>}
+        </div>
         <div className="email-signup">
-          <label>
+          <label htmlFor="email">
             {" "}
             Email
             <input
@@ -33,10 +67,10 @@ export default function Sign() {
               type="email"
               placeholder="Adresse e-mail"
               name="emailsign"
-              {...register("emailsign", {
+              {...register("email", {
                 required: "L'e-mail est obligatoire",
                 pattern: {
-                  value: /^[\w-.]+@([\w-]+.)+[\w-]{2,7}$/,
+                  value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
                   message: "Le format de votre e-mail est incorrect",
                 },
               })}
@@ -45,7 +79,7 @@ export default function Sign() {
           {errors.emailsign && <span> {errors.emailsign.message}</span>}
         </div>
         <div className="password-signup">
-          <label>
+          <label htmlFor="password">
             {" "}
             Mot de passe
             <input
@@ -53,13 +87,13 @@ export default function Sign() {
               type="password"
               placeholder="Mot de passe"
               name="passwordsign"
-              {...register("passwordsign", {
+              {...register("password", {
                 required: "Le mot de passe est obligatoire",
                 pattern: {
                   value:
-                    /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&-]).{8,}$/,
+                    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
                   message:
-                    "Le mot de passe doit au moins contenir 1 majuscule, 1 caractère spécial et 1 chiffre",
+                    "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule, 1 caractère spécial et 1 chiffre",
                 },
               })}
             />
@@ -67,7 +101,7 @@ export default function Sign() {
           {errors.passwordsign && <span> {errors.passwordsign.message}</span>}
         </div>{" "}
         <div className="password-signup">
-          <label>
+          <label htmlFor="confirm password">
             {" "}
             Confirmez votre mot de passe
             <input
@@ -79,9 +113,9 @@ export default function Sign() {
                 required: "Le mot de passe est obligatoire",
                 pattern: {
                   value:
-                    /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$/,
+                    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
                   message:
-                    "Le mot de passe doit au moins contenir 1 majuscule, 1 caractère spécial et 1 chiffre",
+                    "Le mot de passe doit contenir au moins 8 caractère dont 1 majuscule, 1 caractère spécial et 1 chiffre",
                 },
                 validate: (value) =>
                   value === watch("passwordsign") ||
