@@ -1,4 +1,10 @@
 @import url("../variables.css");
+.avatar-icon {
+  width: 1.7rem;
+}
+.logo-homepage {
+  height: 6rem;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -12,7 +18,7 @@
     ul {
       list-style-type: none;
       display: flex;
-      gap: 1rem;
+      gap: 3rem;
       padding: 1rem;
       a {
         text-decoration: none;

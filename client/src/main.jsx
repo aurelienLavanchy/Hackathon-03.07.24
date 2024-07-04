@@ -3,13 +3,15 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import AddOfferPage from "./pages/AddOfferPage/AddOfferPage";
 import App from "./App";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/homepage/HomePage"
 import OffersPage from "./pages/OffersPage";
 import EntreprisesPage from "./pages/EntreprisesPage";
 import DashboardEntreprise from "./pages/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
+import ConnectionPage from "./pages/connectionPage/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
 import IntroPage from "./pages/intro/IntroPage";
 
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/entreprises",
         element: <EntreprisesPage />,
+        loader: () => fetch(`${express}/api/companies`),
       },
       {
         path: "/dashboard",
@@ -49,12 +52,16 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`${express}/api/job/${params.id}`),
       },
       {
+        path: "/connection",
+        element: <ConnectionPage />,
+      },
+      {
         path: "/safezone",
         element: <SafeZonePage />,
       },
       {
-        path: "*",
-        element: <h1>Page not found</h1>,
+        path: "/addOffer",
+        element: <AddOfferPage />,
       },
     ],
   },
