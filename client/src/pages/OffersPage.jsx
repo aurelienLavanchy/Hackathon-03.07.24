@@ -39,63 +39,68 @@ function OffersPage() {
   console.info("Filtered Jobs:", filteredJobs);
 
   return (
-    <div className="offers-container">
-      {" "}
-      <Link className="button-back-offers" to="/">
-        Retour
-      </Link>
-      <div className="filters">
-        <div className="filter">
-          <label htmlFor="location">Localisation:</label>
-          <select
-            id="location"
-            value={locationFilter}
-            onChange={handleLocationChange}
-            className="list-filter"
-          >
-            <option value="">Toutes</option>
-            {locationOptions.map((l) => (
-              <option key={l} value={l}>
-                {l}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="filter">
-          <label htmlFor="contract">Type de Contrat:</label>
-          <select
-            id="contract"
-            value={contractFilter}
-            onChange={handleContractChange}
-            className="list-filter"
-          >
-            <option value="">Tous</option>
-            {contractualOptions.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div className="all-card">
-        {filteredJobs.map((offer) => (
-          <div key={offer.id} className="offer-card">
-            <p className="title-offer">{offer.title} </p>
-            <p>
-              {" "}
-              {offer.location} - {offer.contract}
-            </p>
-
-            {offer.description}
-
-            <div className="button-card-offer">
-              <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
-            </div>
+    <>
+      <h1 className="text-offers">
+        Decouvrez les offres qui vous correspondent{" "}
+      </h1>
+      <div className="offers-container">
+        {" "}
+        <Link className="button-back-offers" to="/">
+          Retour
+        </Link>
+        <div className="filters">
+          <div className="filter">
+            <label htmlFor="location">Localisation:</label>
+            <select
+              id="location"
+              value={locationFilter}
+              onChange={handleLocationChange}
+              className="list-filter"
+            >
+              <option value="">Toutes</option>
+              {locationOptions.map((l) => (
+                <option key={l} value={l}>
+                  {l}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
+          <div className="filter">
+            <label htmlFor="contract">Type de Contrat:</label>
+            <select
+              id="contract"
+              value={contractFilter}
+              onChange={handleContractChange}
+              className="list-filter"
+            >
+              <option value="">Tous</option>
+              {contractualOptions.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="all-card">
+          {filteredJobs.map((offer) => (
+            <div key={offer.id} className="offer-card">
+              <p className="title-offer">{offer.title} </p>
+              <p>
+                {" "}
+                {offer.location} - {offer.contract}
+              </p>
+
+              {offer.description}
+
+              <div className="button-card-offer">
+                <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,17 +1,31 @@
 @import url(../variables.css);
 
+.button-back-entreprise {
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+}
+
 .company-container {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
 }
+.title-entreprise {
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+}
 
 .company-content {
-  background-color: rgba(45, 45, 45, 0.15);
   margin: 4rem;
   padding: 1.5rem;
-  border: 0.0625rem solid var(--accent-color);
-
+  border: 2px solid var(--accent-color);
+  border-radius: 9px;
+  box-shadow: rgba(100, 100, 111, 0.2) 10px 10px 15px 0px;
+  background-color: rgba(255, 159, 28, 0.3);
   header {
     display: flex;
     justify-content: center;
@@ -22,6 +36,7 @@
   }
   .company-details {
     margin: 1.5rem 1.25rem;
+
     p {
       margin: 0.25rem 0;
     }

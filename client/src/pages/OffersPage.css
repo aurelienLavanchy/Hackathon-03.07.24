@@ -1,5 +1,10 @@
 @import url("../variables.css");
 
+.text-offers {
+  margin: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
 .offers-container {
   margin-top: 2rem;
 }

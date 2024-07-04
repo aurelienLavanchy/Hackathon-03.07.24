@@ -1,6 +1,15 @@
 @import url("../variables.css");
 
+.button-back-entreprises {
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+}
 .companies-container {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 }

@@ -8,18 +8,20 @@ export default function EntrepriseDetailsPage() {
   return (
     <div className="company-container">
       <div>
-        <Link to="/">Retour</Link>
+        <Link className="button-back-entreprise" to="/">
+          Retour
+        </Link>
       </div>
       <div className="company-content">
         <header>
-          <h1>{name}</h1>
+          <h1 className="title-entreprise">{name}</h1>
         </header>
         <span>logo?</span>
-        <div className="company-details">
-          <p>{`Nous sommes installé à ${location}`}</p>
-          <p>{`Notre secteur d'activité est ${sector}`}</p>
-        </div>
-        <p className="company-description">{`Qui somme nous ? \n\n${detail}`}</p>
+
+        <p className="company-details">{`Nous sommes installé à ${location}`}</p>
+        <p className="company-details">{`Notre secteur d'activité est ${sector}`}</p>
+
+        <p className="company-details">{`Qui somme nous ? \n\n${detail}`}</p>
       </div>
     </div>
   );
