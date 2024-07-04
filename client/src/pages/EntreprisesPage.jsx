@@ -6,6 +6,9 @@ export default function EntreprisesPage() {
 
   return (
     <div className="companies-container">
+      <div>
+        <Link to="/">Retour</Link>
+      </div>
       <h1 className="entreprises-title">Les entreprises</h1>
       <div className="companies-list">
         {companies &&
@@ -21,7 +24,7 @@ export default function EntreprisesPage() {
               </div>
               <div className="company-footer">
                 <p className="company-short-description">{`À propos: ${c.detail}`}</p>
-              <Link to={`/entreprise/${c.id}`} className="company-link">
+                <Link to={`/entreprise/${c.id}`} className="company-link">
                   En savoir plus
                 </Link>
               </div>
