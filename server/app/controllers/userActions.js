@@ -27,8 +27,8 @@ const edit = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, email, password } = req.body;
-    const user = await tables.user.update(name, email, password, id);
-    res.sendStatus(204).json({ updatedUserInfo: user });
+    await tables.user.update(name, email, password, id);
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }
@@ -39,7 +39,7 @@ const add = async (req, res, next) => {
     const { name, email, password } = req.body;
 
     const insertId = await tables.user.create(name, email, password);
-    res.status(201).json({ insertId });
+    res.json({ insertId });
   } catch (err) {
     next(err);
   }
@@ -48,9 +48,9 @@ const add = async (req, res, next) => {
 const destroy = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const deleteUser = await tables.user.delete(id);
+    await tables.user.delete(id);
 
-    res.sendStatus(204).json({ removed: deleteUser });
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }

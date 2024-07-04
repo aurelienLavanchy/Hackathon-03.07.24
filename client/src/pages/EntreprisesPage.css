@@ -11,12 +11,14 @@
   margin: 2rem 4rem;
 }
 .company-card {
-  border: 0.0625rem solid var(--secondary-color);
+  border: 0.0625rem solid var(--accent-color);
+  border-radius: 0.25rem;
   margin: 1.5rem 2.5rem;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  background-color: rgba(255, 159, 28, 0.3);
 }
 .company-name {
   font-size: 1.2rem;
@@ -36,7 +38,7 @@
 .company-short-description:hover {
   overflow: visible;
   white-space: normal;
-  width: 88%;
+  width: 84%;
 }
 .company-details {
   display: flex;
@@ -48,11 +50,12 @@
 .company-link {
   position: absolute;
   right: 0;
-  top: -60%;
+  top: -20%;
   text-decoration: none;
   color: black;
   border: none;
-  background-color: orange;
-  padding: 0.25rem;
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
   border-radius: 4px;
+  border: var(--black) 1px solid;
 }
