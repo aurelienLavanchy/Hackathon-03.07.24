@@ -8,7 +8,7 @@ export default function Navbar() {
       <span>logo?</span>
       <div>
         <ul>
-          <Link to="/">
+          <Link to="/home">
             <li>Accueil</li>
           </Link>
           <Link to="/offers">
