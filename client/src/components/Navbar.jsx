@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import ConnectionButton from "./connectionButton/ConnectionButton";
 
 export default function Navbar() {
   return (
@@ -7,7 +8,7 @@ export default function Navbar() {
       <span>logo?</span>
       <div>
         <ul>
-          <Link to="/">
+          <Link to="/home">
             <li>Accueil</li>
           </Link>
           <Link to="/offers">
@@ -19,8 +20,9 @@ export default function Navbar() {
           <Link to="/safezone">
             <li>Safe zone</li>
           </Link>
+          <ConnectionButton/>
         </ul>
-        <span>avatar?</span>
+        
       </div>
     </nav>
   );

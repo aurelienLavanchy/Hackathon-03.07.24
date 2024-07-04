@@ -10,7 +10,7 @@ import EntreprisesPage from "./pages/EntreprisesPage";
 import DashboardEntreprise from "./pages/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
-import ConnectionPage from "./pages/ConnectionPage";
+import ConnectionPage from "./pages/connectionPage/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
 import IntroPage from "./pages/intro/IntroPage";
 
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`${express}/api/job/${params.id}`),
       },
       {
-        path: "/account",
+        path: "/connection",
         element: <ConnectionPage />,
       },
       {
