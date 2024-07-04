@@ -7,7 +7,7 @@ class CompanyRepository extends AbstractRepository {
 
   async readAll() {
     const [rows] = await this.database.query(
-      `SELECT id, name,  description, detail, location, sector FROM ${this.table}`
+      `SELECT id, name, description, detail, location, sector FROM ${this.table}`
     );
 
     return rows;

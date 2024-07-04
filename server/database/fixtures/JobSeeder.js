@@ -8,8 +8,8 @@ class JobSeeder extends AbstractSeeder {
   run() {
       const fakeJob =[
         {
-          title: "Ingenieur Logiciel",
-          description: "Developper et maintenir des applications web.",
+          title: "Ingénieur Logiciel",
+          description: "Développer et maintenir des applications web.",
           skill: "JavaScript, React, Node.js",
           contract: "CDI",
           date: new Date(),
@@ -21,8 +21,8 @@ class JobSeeder extends AbstractSeeder {
           company_id: 1
         },
         {
-          title: "Analyste de Donnees",
-          description: "Analyser et interpreter des ensembles de donnees complexes.",
+          title: "Analyste de Données",
+          description: "Analyser et interpreter des ensembles de données complexes.",
           skill: "Python, SQL, Excel",
           contract: "CDI",
           date: new Date(),
@@ -35,9 +35,9 @@ class JobSeeder extends AbstractSeeder {
         },
         {
           title: "Chef de Projet",
-          description: "Gerer des projets et coordonner les equipes.",
+          description: "Gérer des projets et coordonner les équipes.",
           skill: "Agile, Scrum, Leadership",
-          contract: "Independant",
+          contract: "Indépendant",
           date: new Date(),
           rqth: false,
           location: "Lyon",
@@ -47,9 +47,9 @@ class JobSeeder extends AbstractSeeder {
           company_id: 3
         },
         {
-          title: "Analyste Financier",
-          description: "Preparer des rapports financiers et des previsions.",
-          skill: "Modelisation financiere, Excel, SQL",
+          title: "Développeur Front-End",
+          description: "Développer et maintenir l'interface utilisateur des applications web.",
+          skill: "JavaScript, React, CSS",
           contract: "CDI",
           date: new Date(),
           rqth: false,
@@ -60,9 +60,9 @@ class JobSeeder extends AbstractSeeder {
           company_id: 4
         },
         {
-          title: "Scientifique de l'Environnement",
-          description: "Mener des recherches sur les questions environnementales.",
-          skill: "Analyse de donnees, Travail de terrain, SIG",
+          title: "Ingénieur DevOps",
+          description: "Automatiser et optimiser les processus de déploiement et d'intégration continue.",
+          skill: "Docker, Kubernetes, CI/CD",
           contract: "CDD",
           date: new Date(),
           rqth: false,
@@ -73,9 +73,9 @@ class JobSeeder extends AbstractSeeder {
           company_id: 5
         },
         {
-          title: "Ingenieur Mecanique",
-          description: "Concevoir et developper des systemes mécaniques.",
-          skill: "CAO, SolidWorks, Resolution de problemes",
+          title: "Data Scientist",
+          description: "Analyser des données et construire des modèles prédictifs.",
+          skill: "Python, Machine Learning, SQL",
           contract: "CDI",
           date: new Date(),
           rqth: false,
@@ -86,9 +86,9 @@ class JobSeeder extends AbstractSeeder {
           company_id: 6
         },
         {
-          title: "Chef",
-          description: "Preparer et cuisiner des repas de haute qualite.",
-          skill: "Competences culinaires, Creativite, Gestion du temps",
+          title: "Chef de Projet IT",
+          description: "Gérer les projets informatiques de bout en bout.",
+          skill: "Gestion de projet, Agile, Scrum",
           contract: "CDI",
           date: new Date(),
           rqth: false,
@@ -99,9 +99,9 @@ class JobSeeder extends AbstractSeeder {
           company_id: 7
         },
         {
-          title: "Vendeur",
-          description: "Assister les clients et gérer les ventes.",
-          skill: "Service client, Vente, Communication",
+          title: "Architecte Logiciel",
+          description: "Concevoir l'architecture des systèmes logiciels.",
+          skill: "Architecture logicielle, Microservices, Cloud",
           contract: "CDD",
           date: new Date(),
           rqth: false,
