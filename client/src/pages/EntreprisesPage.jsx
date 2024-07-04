@@ -21,7 +21,7 @@ export default function EntreprisesPage() {
               </div>
               <div className="company-footer">
                 <p className="company-short-description">{`À propos: ${c.detail}`}</p>
-                <Link to={`/entreprise/${c.id}`} className="company-link">
+              <Link to={`/entreprise/${c.id}`} className="company-link">
                   En savoir plus
                 </Link>
               </div>
