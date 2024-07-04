@@ -27,7 +27,7 @@ CREATE TABLE job (
     skill VARCHAR(60) NOT NULL,
     contract VARCHAR(60) NOT NULL,
     date DATETIME DEFAULT NOW(),
-    rqth BOOLEAN NOT NULL DEFAULT FALSE,
+    rqth BOOLEAN NOT NULL,
     location VARCHAR(80) NOT NULL,
     salary INT NOT NULL,
     status VARCHAR(80) NOT NULL,

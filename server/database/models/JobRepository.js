@@ -33,12 +33,13 @@ class JobRepository extends AbstractRepository {
       rqth,
       location,
       salary,
-      status
+      status,
     } = job;
 
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET title = ?, description = ?, skill = ?, contract = ?, date = ?, rqth = ?, location = ? , salary = ?, status = ? WHERE id = ?`,
-      [ id,
+      [
+        id,
         title,
         description,
         skill,
@@ -47,13 +48,14 @@ class JobRepository extends AbstractRepository {
         rqth,
         location,
         salary,
-        status
+        status,
       ]
     );
     return result.affectedRows;
   }
 
-  async create(title,
+  async create(
+    title,
     description,
     skill,
     contract,
@@ -63,8 +65,8 @@ class JobRepository extends AbstractRepository {
     salary,
     status,
     category_id,
-    company_id) {
-  
+    company_id
+  ) {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (title, description, skill, contract, date, rqth, location, salary, status, category_id, company_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
@@ -78,7 +80,7 @@ class JobRepository extends AbstractRepository {
         salary,
         status,
         category_id,
-        company_id
+        company_id,
       ]
     );
     return result.insertId;

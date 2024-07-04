@@ -29,14 +29,18 @@ const read = async (req, res, next) => {
 
 // edit
 const edit = async (req, res, next) => {
-
   try {
-    const {id} = req.params
-    const {name, description, detail, location, sector} = req.body;
+    const { id } = req.params;
+    const { name, description, detail, location, sector } = req.body;
     const company = await tables.company.update(
-      name, description, detail, location, sector,id 
+      name,
+      description,
+      detail,
+      location,
+      sector,
+      id
     );
-    res.sendStatus(204).json({updatedCompanyInfo:company});
+    res.sendStatus(204).json({ updatedCompanyInfo: company });
   } catch (err) {
     next(err);
   }
@@ -46,10 +50,14 @@ const edit = async (req, res, next) => {
 
 const add = async (req, res, next) => {
   try {
-    const {name, description, detail, location, sector} = req.body;
+    const { name, description, detail, location, sector } = req.body;
 
     const insertId = await tables.company.create(
-      name, description, detail, location, sector
+      name,
+      description,
+      detail,
+      location,
+      sector
     );
     res.status(201).json({ insertId });
   } catch (err) {
