@@ -24,12 +24,11 @@ class CompanyRepository extends AbstractRepository {
 
   // Edit
 
-
   async update(company) {
-    const {name, description, detail, location, sector, id} = company ;
+    const { name, description, detail, location, sector, id } = company;
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET name = ?, description = ?, detail = ?, location = ?, sector = ? WHERE id = ?`,
-      [name, description, detail, location, sector, id] 
+      [name, description, detail, location, sector, id]
     );
 
     return result.affectedRows > 0;
@@ -37,11 +36,9 @@ class CompanyRepository extends AbstractRepository {
 
   // Add (create)
   async create(name, description, detail, location, sector) {
-    
     const [result] = await this.database.query(
       `insert into ${this.table} (name, description, detail, location, sector) values (?, ?, ?, ?, ?)`,
       [name, description, detail, location, sector]
-      
     );
 
     return result.insertId;
