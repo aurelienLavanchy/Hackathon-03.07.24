@@ -3,7 +3,6 @@ import "./EntreprisesPage.css";
 
 export default function EntreprisesPage() {
   const companies = useLoaderData();
-  console.info(companies);
 
   return (
     <div className="companies-container">
