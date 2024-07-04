@@ -8,14 +8,14 @@ class JobRepository extends AbstractRepository {
 
   async ReadAll() {
     const rows = await this.database.query(
-      `SELECT id, title, description, skill, contract, date, rqth, location, salary, status FROM ${this.table}`
+      `SELECT id, title, description, skill, contract, date, rqth, location, salary, status, category_id, company_id FROM ${this.table}`
     );
     return rows;
   }
 
   async readById(id) {
     const [result] = await this.database.query(
-      `SELECT id, title, description, skill, contract, date, rqth, location, salary, status, company_id FROM ${this.table} WHERE id = ?`,
+      `SELECT id, title, description, skill, contract, date, rqth, location, salary, status, category_id, company_id FROM ${this.table} WHERE id = ?`,
       [id]
     );
 
@@ -37,7 +37,7 @@ class JobRepository extends AbstractRepository {
     } = job;
 
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET title = ?, description = ?, skill = ?, contract = ?, date = ?, rqth = ?, location = ? , salary = ?, status = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET title = ?, description = ?, skill = ?, contract = ?, date = ?, rqth = ?, location = ? , salary = ?, status = ?, category_id = ?, company_id = ? WHERE id = ?`,
       [
         id,
         title,

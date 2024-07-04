@@ -26,7 +26,7 @@ export default function AddOfferPage() {
     }
   };
 
-  const contractualOptions = ["CDI", "CDD", "Alternance", "Stage"];
+  const contractualOptions = ["CDI", "CDD", "Alternance", "Indépendant"];
   const locationOptions = [
     "Paris",
     "Marseille",

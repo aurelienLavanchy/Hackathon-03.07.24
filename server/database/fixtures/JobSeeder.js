@@ -6,143 +6,116 @@ class JobSeeder extends AbstractSeeder {
   }
 
   run() {
-    for (let i = 0; i < 40; i += 1) {
-      const fakeJob = [
+      const fakeJob =[
         {
-          title: "Software Engineer",
-          description: "Develop and maintain web applications.",
+          title: "Ingenieur Logiciel",
+          description: "Developper et maintenir des applications web.",
           skill: "JavaScript, React, Node.js",
-          contract: "Full-time",
+          contract: "CDI",
           date: new Date(),
           rqth: false,
-          location: "San Francisco",
+          location: "Paris",
           salary: 70000,
           status: "active",
           category_id: 1,
-          company_id: 1,
+          company_id: 1
         },
         {
-          title: "Data Analyst",
-          description: "Analyze and interpret complex data sets.",
+          title: "Analyste de Donnees",
+          description: "Analyser et interpreter des ensembles de donnees complexes.",
           skill: "Python, SQL, Excel",
-          contract: "Full-time",
+          contract: "CDI",
           date: new Date(),
           rqth: false,
-          location: "New York",
+          location: "Marseille",
           salary: 60000,
           status: "active",
           category_id: 2,
-          company_id: 2,
+          company_id: 2
         },
         {
-          title: "Project Manager",
-          description: "Manage projects and coordinate teams.",
+          title: "Chef de Projet",
+          description: "Gerer des projets et coordonner les equipes.",
           skill: "Agile, Scrum, Leadership",
-          contract: "Contract",
+          contract: "Independant",
           date: new Date(),
           rqth: false,
-          location: "Chicago",
+          location: "Lyon",
           salary: 80000,
           status: "active",
           category_id: 3,
-          company_id: 3,
+          company_id: 3
         },
         {
-          title: "Financial Analyst",
-          description: "Prepare financial reports and forecasts.",
-          skill: "Financial modeling, Excel, SQL",
-          contract: "Full-time",
+          title: "Analyste Financier",
+          description: "Preparer des rapports financiers et des previsions.",
+          skill: "Modelisation financiere, Excel, SQL",
+          contract: "CDI",
           date: new Date(),
           rqth: false,
-          location: "Boston",
+          location: "Toulouse",
           salary: 75000,
           status: "active",
           category_id: 4,
-          company_id: 4,
+          company_id: 4
         },
         {
-          title: "Environmental Scientist",
-          description: "Conduct research on environmental issues.",
-          skill: "Data analysis, Fieldwork, GIS",
-          contract: "Part-time",
+          title: "Scientifique de l'Environnement",
+          description: "Mener des recherches sur les questions environnementales.",
+          skill: "Analyse de donnees, Travail de terrain, SIG",
+          contract: "CDD",
           date: new Date(),
           rqth: false,
-          location: "Seattle",
+          location: "Nice",
           salary: 50000,
           status: "active",
           category_id: 5,
-          company_id: 5,
+          company_id: 5
         },
         {
-          title: "Mechanical Engineer",
-          description: "Design and develop mechanical systems.",
-          skill: "CAD, SolidWorks, Problem-solving",
-          contract: "Full-time",
+          title: "Ingenieur Mecanique",
+          description: "Concevoir et developper des systemes mécaniques.",
+          skill: "CAO, SolidWorks, Resolution de problemes",
+          contract: "CDI",
           date: new Date(),
           rqth: false,
-          location: "Detroit",
+          location: "Nantes",
           salary: 70000,
           status: "active",
           category_id: 6,
-          company_id: 6,
+          company_id: 6
         },
         {
           title: "Chef",
-          description: "Prepare and cook high-quality meals.",
-          skill: "Culinary skills, Creativity, Time management",
-          contract: "Full-time",
+          description: "Preparer et cuisiner des repas de haute qualite.",
+          skill: "Competences culinaires, Creativite, Gestion du temps",
+          contract: "CDI",
           date: new Date(),
           rqth: false,
-          location: "Los Angeles",
+          location: "Strasbourg",
           salary: 55000,
           status: "active",
           category_id: 7,
-          company_id: 7,
+          company_id: 7
         },
         {
-          title: "Sales Associate",
-          description: "Assist customers and manage sales.",
-          skill: "Customer service, Sales, Communication",
-          contract: "Part-time",
+          title: "Vendeur",
+          description: "Assister les clients et gérer les ventes.",
+          skill: "Service client, Vente, Communication",
+          contract: "CDD",
           date: new Date(),
           rqth: false,
-          location: "Houston",
+          location: "Montpellier",
           salary: 40000,
           status: "active",
           category_id: 8,
-          company_id: 8,
+          company_id: 8
         },
-        {
-          title: "Travel Agent",
-          description: "Plan and book travel arrangements.",
-          skill: "Customer service, Travel planning, Communication",
-          contract: "Full-time",
-          date: new Date(),
-          rqth: false,
-          location: "Miami",
-          salary: 45000,
-          status: "active",
-          category_id: 9,
-          company_id: 9,
-        },
-        {
-          title: "Construction Manager",
-          description: "Oversee construction projects.",
-          skill: "Project management, Construction, Leadership",
-          contract: "Contract",
-          date: new Date(),
-          rqth: false,
-          location: "Denver",
-          salary: 85000,
-          status: "active",
-          category_id: 10,
-          company_id: 10,
-        },
-      ];
-
-      this.insert(fakeJob);
-    }
-  }
-}
-
-module.exports = JobSeeder;
+      ]
+      fakeJob.forEach((job) => 
+        this.insert((job))
+      )
+    }}
+  
+  
+  module.exports = JobSeeder;
