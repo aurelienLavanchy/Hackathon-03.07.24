@@ -25,6 +25,8 @@ const userSchema = z.object({
 
 const validateUser = (req, res, next) => {
   const { name, password, email } = req.body;
+  delete req.body.passwordsign;
+  delete req.body.confirmpassword;
 
   const validate = userSchema.safeParse({
     name,

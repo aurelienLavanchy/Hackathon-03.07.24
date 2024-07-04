@@ -5,8 +5,8 @@ const { encodeJWT } = require("../helpers/jwtHelpers");
 
 const login = async (req, res) => {
   const { email, password } = req.body;
-  const [user] = await tables.user.searchByEmail(email);
-
+  const [user] = await tables.user.findUserByEmail(email);
+  console.info(user);
   if (!user) {
     return res.status(404).json({
       message: "Email and password do not match",
