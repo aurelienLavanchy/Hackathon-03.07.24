@@ -27,3 +27,11 @@
     }
   }
 }
+
+#map-container {
+  height: 20rem;
+  width: 60%;
+  div.leaflet-bottom.leaflet-right {
+    display: none;
+  }
+}

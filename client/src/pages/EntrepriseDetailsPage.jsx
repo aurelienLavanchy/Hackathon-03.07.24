@@ -1,9 +1,12 @@
 import { useLoaderData } from "react-router-dom";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "./EntrepriseDetailsPage.css";
 
 export default function EntrepriseDetailsPage() {
   const companyDetails = useLoaderData();
   const { detail, location, name, sector } = companyDetails;
+  const coordinates = [];
+  console.info(coordinates);
 
   return (
     <div className="company-container">
@@ -18,6 +21,15 @@ export default function EntrepriseDetailsPage() {
         </div>
         <p className="company-description">{`Qui somme nous ? \n\n${detail}`}</p>
       </div>
+      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[51.505, -0.09]}>
+          <Popup>{name}</Popup>
+        </Marker>
+      </MapContainer>
     </div>
   );
 }
