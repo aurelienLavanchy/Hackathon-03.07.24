@@ -28,6 +28,16 @@
   gap: 3rem;
 }
 
+.backButton {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
 .infos-container {
   border: 2px solid;
   border-color: var(--second-color);
@@ -91,6 +101,7 @@
   gap: 2rem;
 }
 .offer-img {
+  object-fit: cover;
   width: 30%;
 }
 

@@ -1,6 +1,15 @@
 @import url("../variables.css");
 
+.button-back-entreprises {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+}
 .companies-container {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +20,7 @@
   margin: 2rem 4rem;
 }
 .company-card {
-  border: 0.0625rem solid var(--accent-color);
+  border: 0.0625rem solid var(--secondary-color);
   border-radius: 0.25rem;
   margin: 1.5rem 2.5rem;
   padding: 1rem 2rem;

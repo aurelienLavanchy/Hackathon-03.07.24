@@ -39,12 +39,17 @@ export default function AddOfferPage() {
     "Bordeaux",
     "Lille",
   ];
-
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <>
       <ToastContainer />
+      <button type="button" onClick={handleBack} className="backButton">
+        Retour
+      </button>
 
-      <h1 className="title-offer">Ajouter votre offre</h1>
+      <h1 className="title-offer">Ajoutez votre offre</h1>
       <div className="container-offer">
         <img className="img-offer" src={jobImage} alt="offer" />
 
@@ -209,6 +214,7 @@ export default function AddOfferPage() {
           </div>
         </form>
       </div>
+
     </>
   );
 }

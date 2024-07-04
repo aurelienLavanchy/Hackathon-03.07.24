@@ -38,55 +38,76 @@ function OffersPage() {
   );
   console.info("Filtered Jobs:", filteredJobs);
 
-  return (
-    <div className="offers-container">
-      <div>
-        <Link to="/">Retour</Link>
-      </div>
-      <div className="filters">
-        <div className="filter">
-          <label htmlFor="contract">Type de Contrat:</label>
-          <select
-            id="contract"
-            value={contractFilter}
-            onChange={handleContractChange}
-          >
-            <option value="">Tous</option>
-            {contractualOptions.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
+  const handleBack = () => {
+    window.history.back();
+  };
 
-        <div className="filter">
-          <label htmlFor="location">Localisation:</label>
-          <select
-            id="location"
-            value={locationFilter}
-            onChange={handleLocationChange}
-          >
-            <option value="">Toutes</option>
-            {locationOptions.map((l) => (
-              <option key={l} value={l}>
-                {l}
-              </option>
-            ))}
-          </select>
+  return (
+    <>
+      <h1 className="text-offers">
+        Decouvrez les offres qui vous correspondent{" "}
+      </h1>
+      <div className="offerss-container">
+        <button
+          type="button"
+          onClick={handleBack}
+          className="button-back-offers"
+        >
+          Retour
+        </button>
+        <div className="filters">
+          <div className="filter">
+            <label htmlFor="location">Localisation:</label>
+            <select
+              id="location"
+              value={locationFilter}
+              onChange={handleLocationChange}
+              className="list-filter"
+            >
+              <option value="">Toutes</option>
+              {locationOptions.map((l) => (
+                <option key={l} value={l}>
+                  {l}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="filter">
+            <label htmlFor="contract">Type de Contrat:</label>
+            <select
+              id="contract"
+              value={contractFilter}
+              onChange={handleContractChange}
+              className="list-filter"
+            >
+              <option value="">Tous</option>
+              {contractualOptions.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="all-card">
+          {filteredJobs.map((offer) => (
+            <div key={offer.id} className="offer-card">
+              <p className="title-offer">{offer.title} </p>
+              <p>
+                {" "}
+                {offer.location} - {offer.contract}
+              </p>
+
+              {offer.description}
+
+              <div className="button-card-offer">
+                <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <div>
-        {filteredJobs.map((offer) => (
-          <div key={offer.id} className="offer-card">
-            <div>
-              <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
-            </div>
-            {offer.title} {offer.description} {offer.contract} {offer.location}
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -3,19 +3,33 @@
 .offer-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: rem;
+  align-items: center;
+}
+.button-position {
+  margin-top: 3rem;
+}
+
+.button-back-offer {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
 }
 
 .offer-title {
-  margin: 0 auto;
+  text-align: center;
 }
 
 .offer-content {
   margin: 4rem;
   padding: 1.5rem;
+  width: 60vw;
   border: 2px solid var(--accent-color);
-  background-color: rgba(255, 159, 28, 0.3);
-
+  border-radius: 9px;
+  box-shadow: rgba(100, 100, 111, 0.2) 10px 10px 15px 0px;
   header {
     display: flex;
     justify-content: center;
@@ -49,6 +63,7 @@
   }
   .offer-button {
     margin-top: 1rem;
+    color: black;
     border: none;
     background-color: var(--secondary-color);
     height: 2rem;
@@ -59,6 +74,5 @@
     justify-content: center;
     border-radius: 8px;
     height: 2.3rem;
-    border: var(--black) 1px solid;
   }
 }

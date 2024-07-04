@@ -55,7 +55,7 @@ export default function DashboardEntreprise() {
               </div>
             </div>
           </div>
-          <NavLink to="/" className="button-modify">
+          <NavLink to="/dashboard/5" className="button-modify">
             Modifier
           </NavLink>
         </div>

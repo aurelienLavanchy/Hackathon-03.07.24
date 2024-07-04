@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "./EntrepriseDetailsPage.css";
 
@@ -63,28 +63,37 @@ export default function EntrepriseDetailsPage() {
     setLocation(location);
   }, [location]);
 
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <div className="company-container">
       <div>
-        <Link to="/">Retour</Link>
+        <button
+          type="button"
+          className="button-back-entreprise"
+          onClick={handleBack}
+        >
+          Retour
+        </button>
       </div>
       <div className="company-content">
         <header>
-          <h1>{name}</h1>
+          <img
+            className="fake-company-logo"
+            src={image}
+            alt="logo de l'entreprise"
+          />{" "}
+          <h1 className="title-entreprise">{name}</h1>
         </header>
-        <img
-          className="fake-company-logo"
-          src={image}
-          alt="logo de l'entreprise"
-        />
-        <div className="company-details">
-          <p>{`Nous sommes installé à ${location}`}</p>
-          <p>{`Notre secteur d'activité est ${sector}`}</p>
-        </div>
+
+        <p className="company-details">{`Nous sommes installé à ${location}`}</p>
+        <p className="company-details">{`Notre secteur d'activité est ${sector}`}</p>
+
         <p className="company-description">{`Qui somme nous ? \n\n${detail}`}</p>
       </div>
       <div className="map-wrapper">
-        <h3>Carte</h3>
+        <h3>Où se situe l'entreprise ? </h3>
         {coordinates && (
           <MapContainer
             center={coordinates}
