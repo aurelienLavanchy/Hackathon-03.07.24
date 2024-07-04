@@ -1,0 +1,17 @@
+.container-intro {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-intro {
+  height: 11rem;
+  width: 32rem;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+}
+
+.text-intro {
+  color: #2ec4b6;
+  margin-bottom: 13rem;
+}

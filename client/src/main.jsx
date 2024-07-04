@@ -12,12 +12,16 @@ import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
 import ConnectionPage from "./pages/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
+import IntroPage from "./pages/intro/IntroPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      { path: "/", 
+      element: <IntroPage /> 
+    },
       {
         path: "/home",
         element: <HomePage />,
