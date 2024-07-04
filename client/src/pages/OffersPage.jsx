@@ -40,9 +40,9 @@ function OffersPage() {
 
   return (
     <div className="offers-container">
-        <div>
-          <Link to="/">Retour</Link>
-        </div>
+      <div>
+        <Link to="/">Retour</Link>
+      </div>
       <div className="filters">
         <div className="filter">
           <label htmlFor="contract">Type de Contrat:</label>
@@ -77,15 +77,15 @@ function OffersPage() {
         </div>
       </div>
       <div>
-     {filteredJobs.map((offer) => (
+        {filteredJobs.map((offer) => (
           <div key={offer.id} className="offer-card">
             <div>
-            <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
+              <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
             </div>
             {offer.title} {offer.description} {offer.contract} {offer.location}
           </div>
-     ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -7,9 +7,9 @@ export default function EntrepriseDetailsPage() {
 
   return (
     <div className="company-container">
-       <div>
-          <Link to="/">Retour</Link>
-        </div>
+      <div>
+        <Link to="/">Retour</Link>
+      </div>
       <div className="company-content">
         <header>
           <h1>{name}</h1>

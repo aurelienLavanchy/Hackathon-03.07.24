@@ -8,9 +8,9 @@ export default function OfferDetailsPage() {
 
   return (
     <div className="offer-container">
-       <div>
-          <Link to="/">Retour</Link>
-        </div>
+      <div>
+        <Link to="/">Retour</Link>
+      </div>
       <h1 className="offer-title">L'offre que vous avez sélectionnée</h1>
       <div className="offer-content">
         <header>
