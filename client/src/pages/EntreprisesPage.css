@@ -1,0 +1,52 @@
+@import url("../variables.css");
+
+.companies-container {
+  display: flex;
+  flex-direction: column;
+}
+.entreprises-title {
+  margin: 0 auto;
+}
+.companies-list {
+  margin: 2rem 4rem;
+}
+.company-card {
+  border: 0.0625rem solid var(--secondary-color);
+  margin: 1.5rem 2.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.company-name {
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+.company-sector {
+  text-decoration: underline dotted;
+}
+.company-short-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 36ch;
+}
+.company-short-description:hover {
+  overflow: visible;
+  white-space: normal;
+  width: 80%;
+}
+.company-details {
+  display: flex;
+  gap: 4rem;
+}
+.company-footer {
+  position: relative;
+}
+.company-link {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  text-decoration: none;
+  border: 1px solid var(--accent-color);
+  background-color: orange;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
