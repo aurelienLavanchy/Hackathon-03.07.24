@@ -1,0 +1,38 @@
+.title-connection {
+  text-align: center;
+}
+.connection-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+.form-connection {
+  margin-left: 3rem;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.email-connection {
+  width: 15rem;
+  margin-top: 0.7rem;
+}
+
+.password-connection {
+  display: flex;
+  margin-top: 0.7rem;
+}
+.form-connection {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-connection {
+  background-color: #2ec4b6;
+  border-style: none;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  margin-top: 9rem;
+  margin-left: 6.5rem;
+}
