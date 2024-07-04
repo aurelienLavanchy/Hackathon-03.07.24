@@ -38,16 +38,23 @@ function OffersPage() {
   );
   console.info("Filtered Jobs:", filteredJobs);
 
+  const handleBack = () => {
+    window.history.back();
+  };
+
   return (
     <>
       <h1 className="text-offers">
         Decouvrez les offres qui vous correspondent{" "}
       </h1>
       <div className="offers-container">
-        {" "}
-        <Link className="button-back-offers" to="/">
+        <button
+          type="button"
+          onClick={handleBack}
+          className="button-back-offers"
+        >
           Retour
-        </Link>
+        </button>
         <div className="filters">
           <div className="filter">
             <label htmlFor="location">Localisation:</label>

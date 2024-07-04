@@ -1,16 +1,23 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import "./EntrepriseDetailsPage.css";
 
 export default function EntrepriseDetailsPage() {
   const companyDetails = useLoaderData();
   const { detail, location, name, sector } = companyDetails;
 
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <div className="company-container">
       <div>
-        <Link className="button-back-entreprise" to="/">
+        <button
+          type="button"
+          className="button-back-entreprise"
+          onClick={handleBack}
+        >
           Retour
-        </Link>
+        </button>
       </div>
       <div className="company-content">
         <header>

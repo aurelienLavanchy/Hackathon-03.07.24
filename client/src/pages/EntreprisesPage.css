@@ -1,7 +1,7 @@
 @import url("../variables.css");
 
 .button-back-entreprises {
-  text-decoration: none;
+  border: none;
   color: black;
   border-radius: 5px;
   padding: 0.3rem 1rem;
@@ -20,7 +20,7 @@
   margin: 2rem 4rem;
 }
 .company-card {
-  border: 0.0625rem solid var(--accent-color);
+  border: 0.0625rem solid var(--secondary-color);
   border-radius: 0.25rem;
   margin: 1.5rem 2.5rem;
   padding: 1rem 2rem;

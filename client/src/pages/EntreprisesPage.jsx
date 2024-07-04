@@ -3,13 +3,15 @@ import "./EntreprisesPage.css";
 
 export default function EntreprisesPage() {
   const companies = useLoaderData();
-
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <div className="companies-container">
       <div>
-        <Link className="button-back-entreprises" to="/">
+        <button type="button" className="button-back-entreprises" onClick={handleBack}>
           Retour
-        </Link>
+        </button>
       </div>
       <h1 className="entreprises-title"> Les entreprises </h1>
       <div className="companies-list">

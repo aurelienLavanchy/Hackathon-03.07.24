@@ -9,7 +9,7 @@
   margin-top: 2rem;
 }
 .button-back-offers {
-  text-decoration: none;
+  border: none;
   color: black;
   border-radius: 5px;
   padding: 0.3rem 1rem;
@@ -18,17 +18,16 @@
 }
 
 .filters {
-  margin-left: 18rem;
+  justify-content: center;
 }
 
 .filter {
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 .list-filter {
   margin-left: 1rem;
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 3px;
+  background-color: var(--white);
+  border-radius: 5px;
 }
 
 .all-card {

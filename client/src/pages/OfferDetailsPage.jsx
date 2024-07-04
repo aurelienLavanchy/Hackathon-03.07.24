@@ -5,13 +5,15 @@ export default function OfferDetailsPage() {
   const [jobOffer] = useLoaderData();
   const postDate = new Date(jobOffer.date);
   const formattedDate = postDate.toISOString().substring(0, 10);
-
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <>
       <div className="button-position">
-        <Link className="button-back-offer" to="/">
+        <button type="button" className="button-back-offer" onClick={handleBack} >
           Retour
-        </Link>
+        </button>
       </div>
       <div className="offer-container">
         {" "}
