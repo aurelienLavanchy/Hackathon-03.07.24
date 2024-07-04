@@ -47,7 +47,7 @@ function OffersPage() {
       <h1 className="text-offers">
         Decouvrez les offres qui vous correspondent{" "}
       </h1>
-      <div className="offers-container">
+      <div className="offerss-container">
         <button
           type="button"
           onClick={handleBack}

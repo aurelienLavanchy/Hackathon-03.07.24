@@ -5,7 +5,7 @@
   margin-bottom: 3rem;
   font-size: 1.5rem;
 }
-.offers-container {
+.offerss-container {
   margin-top: 2rem;
 }
 .button-back-offers {
@@ -40,7 +40,7 @@
 }
 .offer-card {
   width: 60vw;
-  height: 12rem;
+  height: 13rem;
   border: 2px solid var(--accent-color);
   border-radius: 8px;
   margin: 1.5rem 2.5rem;

@@ -48,7 +48,7 @@ export default function Sign() {
               name="namesign"
               className="nom-signup"
               {...register("name", {
-                required: "obligatoire",
+                required: "Le nom est obligatoire",
                 minLength: {
                   value: 2,
                   message: "Il vous faut minimum 2 caractères",

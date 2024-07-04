@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./Connection.css";
 
@@ -85,9 +85,10 @@ export default function Connection() {
             <span> {errors.passwordconnection.message}</span>
           )}
         </div>
-        <button className="btn-connection" type="submit">
+
+        <Link to="/dashboard/5" className="btn-connection" type="submit">
           Se connecter
-        </button>
+        </Link>
       </form>
     </div>
   );

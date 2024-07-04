@@ -28,6 +28,11 @@
 }
 
 .btn-connection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
   background-color: #2ec4b6;
   border-style: none;
   border-radius: 5px;
