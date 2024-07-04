@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import AddOfferPage from "./pages/AddOfferPage/AddOfferPage";
 import App from "./App";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/homepage/HomePage"
 import OffersPage from "./pages/OffersPage";
 import EntreprisesPage from "./pages/EntreprisesPage";
 import DashboardEntreprise from "./pages/DashboardEntreprise";
