@@ -10,7 +10,7 @@ import EntreprisesPage from "./pages/EntreprisesPage";
 import DashboardEntreprise from "./pages/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
-import ConnectionPage from "./pages/ConnectionPage";
+import ConnectionPage from "./pages/ConnectionPage/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
 
 const router = createBrowserRouter([
@@ -43,12 +43,16 @@ const router = createBrowserRouter([
         element: <OfferDetailsPage />,
       },
       {
-        path: "/account",
+        path: "/connection",
         element: <ConnectionPage />,
       },
       {
         path: "/safezone",
         element: <SafeZonePage />,
+      },
+      {
+        path: "*",
+        element: <h1>Page not found</h1>,
       },
     ],
   },
