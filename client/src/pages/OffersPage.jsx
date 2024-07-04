@@ -40,32 +40,18 @@ function OffersPage() {
 
   return (
     <div className="offers-container">
-      <div>
-        <Link to="/">Retour</Link>
-      </div>
+      {" "}
+      <Link className="button-back-offers" to="/">
+        Retour
+      </Link>
       <div className="filters">
-        <div className="filter">
-          <label htmlFor="contract">Type de Contrat:</label>
-          <select
-            id="contract"
-            value={contractFilter}
-            onChange={handleContractChange}
-          >
-            <option value="">Tous</option>
-            {contractualOptions.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="filter">
           <label htmlFor="location">Localisation:</label>
           <select
             id="location"
             value={locationFilter}
             onChange={handleLocationChange}
+            className="list-filter"
           >
             <option value="">Toutes</option>
             {locationOptions.map((l) => (
@@ -75,14 +61,37 @@ function OffersPage() {
             ))}
           </select>
         </div>
+        <div className="filter">
+          <label htmlFor="contract">Type de Contrat:</label>
+          <select
+            id="contract"
+            value={contractFilter}
+            onChange={handleContractChange}
+            className="list-filter"
+          >
+            <option value="">Tous</option>
+            {contractualOptions.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div>
+      <div className="all-card">
         {filteredJobs.map((offer) => (
           <div key={offer.id} className="offer-card">
-            <div>
+            <p className="title-offer">{offer.title} </p>
+            <p>
+              {" "}
+              {offer.location} - {offer.contract}
+            </p>
+
+            {offer.description}
+
+            <div className="button-card-offer">
               <Link to={`/offer/${offer.id}`}> En savoir plus</Link>
             </div>
-            {offer.title} {offer.description} {offer.contract} {offer.location}
           </div>
         ))}
       </div>
