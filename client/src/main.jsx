@@ -21,9 +21,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", 
-      element: <IntroPage /> 
-    },
+      { path: "/", element: <IntroPage /> },
       {
         path: "/home",
         element: <HomePage />,
@@ -43,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/entreprise/:id",
         element: <EntrepriseDetailsPage />,
+        loader: ({ params }) => fetch(`${express}/api/companies/${params.id}`),
       },
       {
         path: "/offer/:id",
