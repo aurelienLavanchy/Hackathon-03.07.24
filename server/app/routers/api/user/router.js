@@ -10,13 +10,16 @@ const {
   destroy,
 } = require("../../../controllers/userActions");
 
+const hashPassword = require("../../../middlewares/hashPassword");
+const validateUser = require("../../../middlewares/validation/validateUser");
+
 router.get("/", browse);
 
 router.get("/:id", read);
 
-router.put("/:id", edit);
+router.put("/:id", hashPassword, edit);
 
-router.post("/", add);
+router.post("/register", validateUser, hashPassword, add);
 
 router.delete("/:id", destroy);
 

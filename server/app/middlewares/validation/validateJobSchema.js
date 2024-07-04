@@ -76,7 +76,7 @@ const validateJobSchema = (req, res, next) => {
     date,
   } = req.body;
 
-  const validate = JobSchema.safeParse({
+  const validate = JobSchema.parse({
     title,
     description,
     skill,

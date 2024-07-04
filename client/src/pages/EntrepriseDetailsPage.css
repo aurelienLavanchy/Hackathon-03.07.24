@@ -1,0 +1,28 @@
+@import url(../variables.css);
+
+.company-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.company-content {
+  margin: 4rem;
+  padding: 1.5rem;
+  border: 0.0625rem solid var(--accent-color);
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  .company-description {
+    white-space: pre-line;
+    margin: 1.25rem;
+  }
+  .company-details {
+    margin: 1.5rem 1.25rem;
+    p {
+      margin: 0.25rem 0;
+    }
+  }
+}

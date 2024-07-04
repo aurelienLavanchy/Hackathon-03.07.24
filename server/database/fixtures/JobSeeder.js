@@ -6,7 +6,7 @@ class JobSeeder extends AbstractSeeder {
   }
 
   run() {
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 40; i += 1) {
       const fakeJob = {
         title: this.faker.person.jobTitle(),
         description: this.faker.lorem.paragraph(),
@@ -17,6 +17,8 @@ class JobSeeder extends AbstractSeeder {
         location: this.faker.location.city(),
         salary: this.faker.number.bigInt({ min: 20000n, max: 80000n }),
         status: "active",
+        category_id: this.faker.number.int({ min: 1, max: 8 }),
+        company_id: this.faker.number.int({ min: 1, max: 10 }),
       };
 
       this.insert(fakeJob);

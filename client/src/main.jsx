@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import AddOfferPage from "./pages/AddOfferPage/AddOfferPage";
 import App from "./App";
 import HomePage from "./pages/HomePage";
 import OffersPage from "./pages/OffersPage";
@@ -12,13 +13,16 @@ import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
 import ConnectionPage from "./pages/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
-import AddOfferPage from "./pages/AddOfferPage/AddOfferPage";
+import IntroPage from "./pages/intro/IntroPage";
+
+const express = import.meta.env.VITE_API_URL;
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      { path: "/", element: <IntroPage /> },
       {
         path: "/home",
         element: <HomePage />,
@@ -38,10 +42,12 @@ const router = createBrowserRouter([
       {
         path: "/entreprise/:id",
         element: <EntrepriseDetailsPage />,
+        loader: ({ params }) => fetch(`${express}/api/companies/${params.id}`),
       },
       {
         path: "/offer/:id",
         element: <OfferDetailsPage />,
+        loader: ({ params }) => fetch(`${express}/api/job/${params.id}`),
       },
       {
         path: "/account",
