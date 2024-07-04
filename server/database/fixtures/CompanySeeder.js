@@ -11,7 +11,18 @@ class CompanySeeder extends AbstractSeeder {
         name: this.faker.company.name(),
         description: this.faker.lorem.sentence(),
         detail: this.faker.lorem.paragraph(),
-        location: this.faker.location.city(),
+        location: this.faker.helpers.arrayElement([
+          "Paris",
+          "Marseille",
+          "Lyon",
+          "Toulouse",
+          "Nice",
+          "Nantes",
+          "Strasbourg",
+          "Montpellier",
+          "Bordeaux",
+          "Lille",
+        ]),
         sector: this.faker.lorem.word(),
       };
       this.insert(fakeCompany);
