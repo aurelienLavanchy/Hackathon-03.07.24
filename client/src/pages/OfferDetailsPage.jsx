@@ -25,11 +25,11 @@ export default function OfferDetailsPage() {
             <p>{`Status: ${jobOffer.status}`}</p>
           </div>
           <Link to={`/entreprise/${jobOffer.company_id}`}>
-            <button type="button" className="offer-button">
+            <p className="offer-button">
               {jobOffer.status === "active"
                 ? "En savoir plus sur l'entreprise"
                 : "Voir les autres offres de cette entreprise"}
-            </button>
+            </p>
           </Link>
         </footer>
       </div>
