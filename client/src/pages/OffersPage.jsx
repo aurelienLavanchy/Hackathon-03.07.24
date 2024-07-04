@@ -17,7 +17,7 @@ function OffersPage() {
     setLocationFilter(e.target.value);
   };
 
-  const contractualOptions = ["CDI", "CDD", "Alternance", "Stage"];
+  const contractualOptions = ["CDI", "CDD", "Indépendant"];
   const locationOptions = [
     "Paris",
     "Marseille",

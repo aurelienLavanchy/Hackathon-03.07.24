@@ -56,7 +56,7 @@ export default function Sign() {
               })}
             />
           </label>
-          {errors.namesign && <span> {errors.namesign.message} </span>}
+          {errors.name && <span> {errors.name.message} </span>}
         </div>
         <div className="email-signup">
           <label htmlFor="email">
@@ -76,7 +76,7 @@ export default function Sign() {
               })}
             />
           </label>
-          {errors.emailsign && <span> {errors.emailsign.message}</span>}
+          {errors.email && <span> {errors.email.message}</span>}
         </div>
         <div className="password-signup">
           <label htmlFor="password">
@@ -98,7 +98,7 @@ export default function Sign() {
               })}
             />
           </label>
-          {errors.passwordsign && <span> {errors.passwordsign.message}</span>}
+          {errors.password && <span> {errors.password.message}</span>}
         </div>{" "}
         <div className="password-signup">
           <label htmlFor="confirm password">
@@ -118,13 +118,15 @@ export default function Sign() {
                     "Le mot de passe doit contenir au moins 8 caractère dont 1 majuscule, 1 caractère spécial et 1 chiffre",
                 },
                 validate: (value) =>
-                  value === watch("passwordsign") ||
+                  value === watch("password") ||
                   "Les mots de passes ne correspondent pas.",
               })}
             />{" "}
           </label>
           {errors.confirmpassword && (
-            <span>{errors.confirmpassword.message}</span>
+            <span className="error-message">
+              {errors.confirmpassword.message}
+            </span>
           )}
         </div>
         <button className="btn-sign" type="submit">

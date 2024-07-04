@@ -18,6 +18,7 @@ CREATE TABLE company (
     description TEXT NOT NULL,
     detail TEXT NOT NULL,
     location VARCHAR(100) NOT NULL,
+    image TEXT NOT NULL,
     sector VARCHAR(100) NOT NULL
 );
 
