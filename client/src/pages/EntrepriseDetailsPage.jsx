@@ -5,7 +5,8 @@ import "./EntrepriseDetailsPage.css";
 
 export default function EntrepriseDetailsPage() {
   const companyDetails = useLoaderData();
-  const { detail, location, name, sector } = companyDetails;
+  const { detail, location, name, sector, image } = companyDetails;
+  console.info(companyDetails);
 
   const [coordinates, setCoordinates] = useState(null);
 
@@ -71,6 +72,11 @@ export default function EntrepriseDetailsPage() {
         <header>
           <h1>{name}</h1>
         </header>
+        <img
+          className="fake-company-logo"
+          src={image}
+          alt="logo de l'entreprise"
+        />
         <div className="company-details">
           <p>{`Nous sommes installé à ${location}`}</p>
           <p>{`Notre secteur d'activité est ${sector}`}</p>
