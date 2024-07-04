@@ -10,14 +10,17 @@ import EntreprisesPage from "./pages/EntreprisesPage";
 import DashboardEntreprise from "./pages/DashboardEntreprise";
 import EntrepriseDetailsPage from "./pages/EntrepriseDetailsPage";
 import OfferDetailsPage from "./pages/OfferDetailsPage";
-import ConnectionPage from "./pages/ConnectionPage/ConnectionPage";
 import SafeZonePage from "./pages/SafeZonePage";
+import IntroPage from "./pages/intro/IntroPage";
+
+const express = import.meta.env.VITE_API_URL;
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      { path: "/", element: <IntroPage /> },
       {
         path: "/home",
         element: <HomePage />,
@@ -37,14 +40,12 @@ const router = createBrowserRouter([
       {
         path: "/entreprise/:id",
         element: <EntrepriseDetailsPage />,
+        loader: ({ params }) => fetch(`${express}/api/companies/${params.id}`),
       },
       {
         path: "/offer/:id",
         element: <OfferDetailsPage />,
-      },
-      {
-        path: "/connection",
-        element: <ConnectionPage />,
+        loader: ({ params }) => fetch(`${express}/api/job/${params.id}`),
       },
       {
         path: "/safezone",

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import ConnectionButton from "./ConnectionButton/ConnectionButton";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <span>logo?</span>
       <ul>
         <Link to="/">
@@ -19,9 +18,6 @@ export default function Navbar() {
           <li>Conseils</li>
         </Link>
       </ul>
-      <div>
-        <ConnectionButton />
-      </div>
     </nav>
   );
 }
