@@ -3,8 +3,6 @@ import "./EntrepriseDetailsPage.css";
 
 export default function EntrepriseDetailsPage() {
   const companyDetails = useLoaderData();
-  console.info(companyDetails);
-  // description, detail, id, location, name, sector
   const { detail, location, name, sector } = companyDetails;
 
   return (
