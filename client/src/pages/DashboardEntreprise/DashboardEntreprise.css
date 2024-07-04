@@ -60,28 +60,30 @@
   background-color: var(--second-color);
   color: var(--third-color);
   border: solid 1px var(--second-color);
-  border-radius: 25px;
+  border-radius: 5px;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   cursor: pointer;
   text-decoration: none;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  color: black;
 }
 
 .button-ajouter {
   background-color: var(--second-color);
   color: var(--third-color);
   border: solid 1px var(--second-color);
-  border-radius: 25px;
+  border-radius: 5px;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   cursor: pointer;
   text-decoration: none;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  color: black;
 }
 .button-modify:hover {
   background: var(--main-color);

@@ -15,7 +15,7 @@ class CompanyRepository extends AbstractRepository {
 
   async read(id) {
     const [row] = await this.database.query(
-      `SELECT c.id, c.name, c.description, c.detail, c.location, c.sector, j.title, j.date, j.status FROM ${this.table} as c RIGHT JOIN job as j on c.id = j.company_id where c.id=?`,
+      `SELECT c.id, c.name, c.description, c.detail, c.location, c.sector, j.title, j.date, j.status, c.image FROM ${this.table} as c RIGHT JOIN job as j on c.id = j.company_id where c.id=?`,
       [id]
     );
 

@@ -3,6 +3,7 @@
 .tips-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 2rem;
 }
 
@@ -12,9 +13,13 @@
 }
 
 .texte {
-  color: #ff9f1c;
+  color: black;
+  margin: O;
+  max-width: 105ch;
+  margin-bottom: 2rem;
 }
 .article {
+  width: 70rem;
   margin: 2rem 0;
   padding: 1.5rem;
   border: 2px solid var(--accent-color);
@@ -35,6 +40,7 @@
 .article-link {
   color: #2ec4b6;
   text-decoration: none;
+  font-size: 1.4rem;
 }
 
 .article-link:hover {

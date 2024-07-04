@@ -56,7 +56,7 @@ export default function AddOfferPage() {
         <form className="container-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-offer">
             <label htmlFor="name" className="label-field">
-              Title
+              Titre
             </label>
             <input
               type="text"
@@ -107,7 +107,7 @@ export default function AddOfferPage() {
               })}
             />
             <label htmlFor="contract" className="label-field">
-              Contract
+              Contrat
             </label>
             <select
               name="contract"
@@ -137,8 +137,8 @@ export default function AddOfferPage() {
               })}
             >
               <option value="">Sélectionner une option</option>
-              <option value="1">True</option>
-              <option value="0">False</option>
+              <option value="1">Oui</option>
+              <option value="0">Non</option>
             </select>
             {errors.rqth && (
               <span className="error-offer">{errors.rqth.message}</span>

@@ -49,7 +49,7 @@ export default function DashboardEntreprise() {
                   {location}
                 </div>
                 <div className="cle">
-                  <h2>Sector</h2>
+                  <h2>Secteur</h2>
                   {sector}
                 </div>
               </div>
