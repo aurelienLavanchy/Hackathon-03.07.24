@@ -12,7 +12,7 @@ export default function EntrepriseDetailsPage() {
   useEffect(() => {
     const cityCoordinates = [
       [48.856613, 2.352222],
-      [47.068008, 3.01348],
+      [43.3026, 5.3691],
       [45.764042, 4.835659],
       [43.603951, 1.44451],
       [43.710175, 7.261953],
