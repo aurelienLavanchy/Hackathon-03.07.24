@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/entreprises",
         element: <EntreprisesPage />,
+        loader: () => fetch(`${express}/api/companies`),
       },
       {
         path: "/dashboard",
