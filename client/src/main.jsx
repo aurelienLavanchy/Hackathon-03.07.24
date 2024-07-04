@@ -28,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/offers",
         element: <OffersPage />,
+        loader : () => fetch(`${express}/api/job`)
       },
       {
         path: "/entreprises",

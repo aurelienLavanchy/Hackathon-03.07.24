@@ -1,15 +1,19 @@
-export default function OffersPage() {
+import { useLoaderData } from "react-router-dom";
+
+function OffersPage() {
+  const [jobsData] = useLoaderData();
+  console.info(jobsData);
   return (
-    <>
-      <header>
-        <h1>Les offres de ce moment</h1>
-        <ul>
-          <li>filtre1</li>
-          <li>filtre2</li>
-          <li>filtre3</li>
-        </ul>
-      </header>
-      <p>contenu</p>
-    </>
+    <div>
+      {jobsData && jobsData.map((offer) => (
+        <p key={offer.id}>
+          {" "}
+          {offer.title} {offer.description} {offer.contractType}{" "}
+          {offer.location}
+        </p>
+      ))}
+    </div>
   );
 }
+
+export default OffersPage;

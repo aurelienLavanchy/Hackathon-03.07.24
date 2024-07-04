@@ -7,7 +7,7 @@ class JobRepository extends AbstractRepository {
   }
 
   async ReadAll() {
-    const [rows] = await this.database.query(
+    const rows = await this.database.query(
       `SELECT id, title, description, skill, contract, date, rqth, location, salary, status FROM ${this.table}`
     );
     return rows;
