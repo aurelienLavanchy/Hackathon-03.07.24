@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "./EntrepriseDetailsPage.css";
 
@@ -64,6 +64,9 @@ export default function EntrepriseDetailsPage() {
 
   return (
     <div className="company-container">
+      <div>
+        <Link to="/">Retour</Link>
+      </div>
       <div className="company-content">
         <header>
           <h1>{name}</h1>
