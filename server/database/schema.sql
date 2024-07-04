@@ -29,7 +29,7 @@ CREATE TABLE job (
     date DATETIME DEFAULT NOW(),
     rqth BOOLEAN NOT NULL DEFAULT FALSE,
     location VARCHAR(80) NOT NULL,
-    salary VARCHAR(80) NOT NULL,
+    salary INT NOT NULL,
     status VARCHAR(80) NOT NULL,
     category_id INT UNSIGNED,
     company_id INT UNSIGNED,
