@@ -84,8 +84,8 @@
 }
 
 .button-offer {
+  color: black;
   background-color: var(--second-color);
-  color: var(--third-color);
   border: solid 1px var(--second-color);
   border-radius: 25px;
   margin-top: 1rem;
