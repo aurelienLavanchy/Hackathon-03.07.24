@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import AddOfferPage from "./pages/AddOfferPage/AddOfferPage";
 import App from "./App";
 import HomePage from "./pages/HomePage";
 import OffersPage from "./pages/OffersPage";
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/safezone",
         element: <SafeZonePage />,
+      },
+      {
+        path: "/addOffer",
+        element: <AddOfferPage />,
       },
     ],
   },
