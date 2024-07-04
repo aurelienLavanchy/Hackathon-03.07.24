@@ -16,18 +16,20 @@ export default function OfferDetailsPage() {
         <div className="offer-details">
           <p>{`Lieu: ${jobOffer.location}`}</p>
           <p>{`Type de contrat: ${jobOffer.contract}`}</p>
-          <p>{`Salaire: ${jobOffer.salary}`}</p>
+          <p>{`Salaire: ${jobOffer.salary} €`}</p>
         </div>
         <p className="offer-description">{`Les missions pour ce poste: \n${jobOffer.description}`}</p>
         <footer>
-          <div>
+          <div className="date-status">
             <p>{`Posté le ${formattedDate}`}</p>
             <p>{`Status: ${jobOffer.status}`}</p>
           </div>
           <Link to={`/entreprise/${jobOffer.company_id}`}>
-            {jobOffer.status === "active"
-              ? "En savoir plus sur l'entreprise"
-              : "Voir les autres offres de cette entreprise"}
+            <button type="button" className="offer-button">
+              {jobOffer.status === "active"
+                ? "En savoir plus sur l'entreprise"
+                : "Voir les autres offres de cette entreprise"}
+            </button>
           </Link>
         </footer>
       </div>

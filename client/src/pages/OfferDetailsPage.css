@@ -13,7 +13,7 @@
 .offer-content {
   margin: 4rem;
   padding: 1.5rem;
-  border: 0.0625rem solid var(--accent-color);
+  border: 0.2rem solid var(--accent-color);
 
   header {
     display: flex;
@@ -39,5 +39,15 @@
       gap: 2rem;
       margin: 0;
     }
+  }
+  .date-status {
+    margin-top: 4rem;
+  }
+  .offer-button {
+    margin-top: 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    height: 2rem;
+    width: 18rem;
   }
 }
