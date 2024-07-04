@@ -23,7 +23,15 @@ class CompanySeeder extends AbstractSeeder {
           "Bordeaux",
           "Lille",
         ]),
-        sector: this.faker.lorem.word(),
+        sector: this.faker.helpers.arrayElement([
+          "Commerce",
+          "Numérique",
+          "Tourisme",
+          "Services marchands",
+          "Industrie manufacturière",
+          "Professions libérales",
+          "Artisanat",
+        ]),
       };
       this.insert(fakeCompany);
     }
