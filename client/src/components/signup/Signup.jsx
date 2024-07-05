@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Sign() {
   const [resStatus, setResStatus] = useState(null);
@@ -18,8 +20,9 @@ export default function Sign() {
   const express = import.meta.env.VITE_API_URL;
   const onSubmit = async (data) => {
     try {
-      await axios
-        .post(`${express}/api/user/register`, data)
+      await axios.post(`${express}/api/user/register`, data);
+      toast
+        .success("Inscription réussie!")
         .then(
           (response) => console.info(response) && setResStatus(response.status)
         );
@@ -29,110 +32,114 @@ export default function Sign() {
       }
     } catch (err) {
       console.error(err);
+      // toast.error("Une erreur est survenue, veuillez réessayer ultérieurement");
     }
   };
 
   return (
-    <div className="sign-container">
-      <h1 className="title-connection">Je créé un compte</h1>
-      <form
-        className="form-sign"
-        method="post"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <div className="name-signup">
-          <label htmlFor="nom">
-            Nom
-            <input
-              type="name"
-              name="namesign"
-              className="nom-signup"
-              {...register("name", {
-                required: "Le nom est obligatoire",
-                minLength: {
-                  value: 2,
-                  message: "Il vous faut minimum 2 caractères",
-                },
-              })}
-            />
-          </label>
-          {errors.name && <span> {errors.name.message} </span>}
-        </div>
-        <div className="email-signup">
-          <label htmlFor="email">
-            {" "}
-            Email
-            <input
-              className="email-sign"
-              type="email"
-              placeholder="Adresse e-mail"
-              name="emailsign"
-              {...register("email", {
-                required: "L'e-mail est obligatoire",
-                pattern: {
-                  value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
-                  message: "Le format de votre e-mail est incorrect",
-                },
-              })}
-            />
-          </label>
-          {errors.email && <span> {errors.email.message}</span>}
-        </div>
-        <div className="password-signup">
-          <label htmlFor="password">
-            {" "}
-            Mot de passe
-            <input
-              className="password-signup"
-              type="password"
-              placeholder="Mot de passe"
-              name="passwordsign"
-              {...register("password", {
-                required: "Le mot de passe est obligatoire",
-                pattern: {
-                  value:
-                    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
-                  message:
-                    "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule, 1 caractère spécial et 1 chiffre",
-                },
-              })}
-            />
-          </label>
-          {errors.password && <span> {errors.password.message}</span>}
-        </div>{" "}
-        <div className="password-signup">
-          <label htmlFor="confirm password">
-            {" "}
-            Confirmez votre mot de passe
-            <input
-              className="confirm-password"
-              type="password"
-              placeholder="Confirmer le mot de passe"
-              name="confirmpassword"
-              {...register("confirmpassword", {
-                required: "Le mot de passe est obligatoire",
-                pattern: {
-                  value:
-                    /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
-                  message:
-                    "Le mot de passe doit contenir au moins 8 caractère dont 1 majuscule, 1 caractère spécial et 1 chiffre",
-                },
-                validate: (value) =>
-                  value === watch("password") ||
-                  "Les mots de passes ne correspondent pas.",
-              })}
-            />{" "}
-          </label>
-          {errors.confirmpassword && (
-            <span className="error-message">
-              {errors.confirmpassword.message}
-            </span>
-          )}
-        </div>
-        <button className="btn-sign" type="submit">
-          S'inscrire
-        </button>
-      </form>
-    </div>
+    <>
+      <ToastContainer />
+      <div className="sign-container">
+        <h1 className="title-connection">Je créé un compte</h1>
+        <form
+          className="form-sign"
+          method="post"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="name-signup">
+            <label htmlFor="nom">
+              Nom
+              <input
+                type="name"
+                name="namesign"
+                className="nom-signup"
+                {...register("name", {
+                  required: "Le nom est obligatoire",
+                  minLength: {
+                    value: 2,
+                    message: "Il vous faut minimum 2 caractères",
+                  },
+                })}
+              />
+            </label>
+            {errors.name && <span> {errors.name.message} </span>}
+          </div>
+          <div className="email-signup">
+            <label htmlFor="email">
+              {" "}
+              Email
+              <input
+                className="email-sign"
+                type="email"
+                placeholder="Adresse e-mail"
+                name="emailsign"
+                {...register("email", {
+                  required: "L'e-mail est obligatoire",
+                  pattern: {
+                    value: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
+                    message: "Le format de votre e-mail est incorrect",
+                  },
+                })}
+              />
+            </label>
+            {errors.email && <span> {errors.email.message}</span>}
+          </div>
+          <div className="password-signup">
+            <label htmlFor="password">
+              {" "}
+              Mot de passe
+              <input
+                className="password-signup"
+                type="password"
+                placeholder="Mot de passe"
+                name="passwordsign"
+                {...register("password", {
+                  required: "Le mot de passe est obligatoire",
+                  pattern: {
+                    value:
+                      /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
+                    message:
+                      "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule, 1 caractère spécial et 1 chiffre",
+                  },
+                })}
+              />
+            </label>
+            {errors.password && <span> {errors.password.message}</span>}
+          </div>{" "}
+          <div className="password-signup">
+            <label htmlFor="confirm password">
+              {" "}
+              Confirmez votre mot de passe
+              <input
+                className="confirm-password"
+                type="password"
+                placeholder="Confirmer le mot de passe"
+                name="confirmpassword"
+                {...register("confirmpassword", {
+                  required: "Le mot de passe est obligatoire",
+                  pattern: {
+                    value:
+                      /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,64}$/,
+                    message:
+                      "Le mot de passe doit contenir au moins 8 caractère dont 1 majuscule, 1 caractère spécial et 1 chiffre",
+                  },
+                  validate: (value) =>
+                    value === watch("password") ||
+                    "Les mots de passes ne correspondent pas.",
+                })}
+              />{" "}
+            </label>
+            {errors.confirmpassword && (
+              <span className="error-message">
+                {errors.confirmpassword.message}
+              </span>
+            )}
+          </div>
+          <button className="btn-sign" type="submit">
+            S'inscrire
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
