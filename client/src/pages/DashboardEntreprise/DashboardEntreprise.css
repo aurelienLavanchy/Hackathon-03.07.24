@@ -1,0 +1,113 @@
+:root {
+  --main-color: #ff9f1c;
+  --second-color: #2ec4b6;
+  --third-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "allerta";
+}
+@font-face {
+  font-family: "allerta";
+  src: url("../../assets/fonts/Allerta-Regular.ttf");
+}
+
+.titre-board {
+  color: var(--second-color);
+}
+.titre-infos {
+  color: var(--main-color);
+}
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  gap: 3rem;
+}
+
+.backButton {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.infos-container {
+  border: 2px solid;
+  border-color: var(--second-color);
+  padding: 2rem;
+  width: 80%;
+  position: relative;
+  box-shadow: 0 4px 8px;
+}
+
+.infos {
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.cle {
+  margin-bottom: 1rem;
+}
+
+.button-modify {
+  background-color: var(--second-color);
+  color: var(--third-color);
+  border: solid 1px var(--second-color);
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: black;
+}
+
+.button-ajouter {
+  background-color: var(--second-color);
+  color: var(--third-color);
+  border: solid 1px var(--second-color);
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: black;
+}
+.button-modify:hover {
+  background: var(--main-color);
+  border: var(--main-color);
+}
+
+.offers-container {
+  border: 1px solid;
+  border-color: var(--second-color);
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 8px;
+}
+.offer-body {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.offer-img {
+  object-fit: cover;
+  width: 30%;
+}
+
+.button-ajouter:hover {
+  background: var(--main-color);
+  border: var(--main-color);
+}

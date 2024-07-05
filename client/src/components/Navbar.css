@@ -1,0 +1,41 @@
+@import url("../variables.css");
+.avatar-icon {
+  width: 1.7rem;
+}
+.logo-homepage {
+  height: 6rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 3rem;
+      padding: 1rem;
+      a {
+        text-decoration: none;
+        font-size: 1.15rem;
+        color: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+        scale: 1.2;
+        z-index: 2;
+        color: var(--accent-color);
+        background-color: var(--white);
+        mix-blend-mode: darken;
+        transition: scale 150ms ease-in-out;
+        border: 0.125rem transparent;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+}

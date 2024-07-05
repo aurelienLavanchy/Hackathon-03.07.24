@@ -1,0 +1,48 @@
+@import url("../variables.css");
+
+.tips-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.texte {
+  color: black;
+  margin: O;
+  max-width: 105ch;
+  margin-bottom: 2rem;
+}
+.article {
+  width: 70rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-content {
+  margin: 1rem 0;
+}
+
+.article-link {
+  color: #2ec4b6;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.article-link:hover {
+  text-decoration: underline;
+}

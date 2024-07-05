@@ -1,0 +1,65 @@
+@import url(../variables.css);
+
+.button-back-entreprise {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+}
+
+.company-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.title-entreprise {
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.company-content {
+  margin: 4rem;
+  padding: 1.5rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 9px;
+  box-shadow: rgba(100, 100, 111, 0.2) 10px 10px 15px 0px;
+  background-color: rgba(255, 159, 28, 0.3);
+  header {
+    display: flex;
+    gap: 3rem;
+  }
+  .company-description {
+    white-space: pre-line;
+    margin: 1.25rem;
+  }
+  .company-details {
+    margin: 1.5rem 1.25rem;
+
+    p {
+      margin: 0.25rem 0;
+    }
+  }
+  .fake-company-logo {
+    margin-bottom: 1rem;
+    width: auto;
+    height: 15rem;
+  }
+}
+
+.map-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 15rem;
+}
+
+#map-container {
+  height: 30rem;
+  width: 75%;
+  /* div.leaflet-bottom.leaflet-right {
+    display: none;
+  } */
+}

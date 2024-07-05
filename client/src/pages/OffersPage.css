@@ -1,0 +1,86 @@
+@import url("../variables.css");
+
+.text-offers {
+  margin: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+.offerss-container {
+  margin-top: 2rem;
+}
+.button-back-offers {
+  border: none;
+  color: black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  background-color: var(--secondary-color);
+  margin-left: 2rem;
+}
+
+.filters {
+  justify-content: center;
+}
+
+.filter {
+  margin-left: 2rem;
+}
+.list-filter {
+  margin-left: 1rem;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.all-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-offer {
+  display: flex;
+}
+.offer-card {
+  width: 60vw;
+  height: 13rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  margin: 1.5rem 2.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 10px 10px 19px 0px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.offer-card p {
+  margin: 0;
+}
+
+.offer-card a {
+  text-decoration: none;
+  color: black;
+  border: none;
+  background-color: orange;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+.button-card-offer {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: end;
+}
+.offer-card a:hover {
+  background-color: darkorange;
+}
+
+.offer-button:hover {
+  background-color: var(--primary-hover-color);
+}

@@ -1,0 +1,21 @@
+.form-auth {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 3rem;
+}
+
+.container-connection {
+  height: 40rem;
+  width: 30rem;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #2ec4b6;
+}
+.container-signup {
+  height: 40rem;
+  width: 30rem;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #ff9f1c;
+}

@@ -1,0 +1,50 @@
+.title-connection {
+  text-align: center;
+}
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-sign {
+  margin-left: 3rem;
+  gap: 1.3rem;
+  align-items: flex-start;
+}
+.email-signup {
+  width: 15rem;
+}
+
+.nom-signup {
+  margin-top: 0.7rem;
+  display: flex;
+}
+
+.email-sign {
+  margin-top: 0.7rem;
+}
+.password-signup {
+  display: flex;
+  margin-top: 0.7rem;
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+}
+.confirm-password {
+  width: 18rem;
+  margin-top: 0.7rem;
+}
+.btn-sign {
+  background-color: #ff9f1c;
+  border-style: none;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  margin-top: 2rem;
+  margin-left: 6.5rem;
+}
+.password-signup {
+  display: flex;
+  flex-direction: column;
+}
